@@ -84,6 +84,8 @@ async function submit() {
 label { display: grid; gap: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-700); }
 input, select, textarea { box-sizing: border-box; display: block; min-width: 0; max-width: 100%; font: 400 15px var(--sans); color: var(--ink); text-transform: none; letter-spacing: 0; padding: 13px 14px; border: 1px solid #dcdfe6; border-radius: 10px; background: var(--card); width: 100%; transition: border-color .2s, box-shadow .2s; }
 input:not([type="hidden"]):not(.hp), select { height: 48px; }
+.date-row, .date-row label { min-width: 0; }
+.date-row input[type="date"] { width: 100%; min-width: 0; max-width: 100%; }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(45,106,79,.2); background: var(--white); }
 textarea { resize: vertical; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
@@ -102,6 +104,9 @@ textarea { resize: vertical; }
   .ic { width: 42px; height: 42px; }
   .row { grid-template-columns: 1fr; }
   .row, .row label, .card > label { width: 100%; min-width: 0; }
+  .date-row { grid-template-columns: minmax(0, 1fr); }
+  .date-row label { grid-column: 1 / -1; }
+  .date-row input[type="date"] { padding-inline: 10px; font-size: 14px; }
   .card { padding: 24px 18px; border-radius: 20px; }
   .card h3 { font-size: 26px; line-height: 1.12; }
 }

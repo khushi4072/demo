@@ -355,6 +355,20 @@ const markers = computed(() =>
   })
 )
 
+const nearbyCities = [
+  { key: 'delhi', name: 'Delhi', note: 'National capital', lon: 77.209, lat: 28.614, side: 'left', lx: -40, ly: 14 },
+  { key: 'gurugram', name: 'Gurugram', note: 'Delhi NCR', lon: 77.027, lat: 28.459, side: 'left', lx: -40, ly: 60 },
+  { key: 'faridabad', name: 'Faridabad', note: 'Delhi NCR', lon: 77.318, lat: 28.409, side: 'left', lx: -40, ly: 202 },
+]
+
+const mapMarkers = computed(() => [
+  ...markers.value,
+  ...nearbyCities.map((l, i) => {
+    const [x, y] = project(l.lon, l.lat)
+    return { ...l, x, y, ax: l.lx + PILL_W, ay: l.ly + PILL_H / 2, i: markers.value.length + i }
+  }),
+])
+
 // route runs north to south: Dehradun -> Noida -> Vrindavan
 const routePath = computed(() => {
   const pts = [...markers.value].sort((a, b) => a.y - b.y)
@@ -607,7 +621,7 @@ const focusLoc = (key: string) => {
 
                   <g class="leaders">
                     <line
-                      v-for="m in markers" :key="'l-' + m.key"
+                      v-for="m in mapMarkers" :key="'l-' + m.key"
                       :x1="m.x" :y1="m.y" :x2="m.ax" :y2="m.ay"
                       class="leader"
                       :class="{ on: activeLoc === m.key, dim: activeLoc && activeLoc !== m.key }"
@@ -616,11 +630,11 @@ const focusLoc = (key: string) => {
                   </g>
 
                   <g
-                    v-for="m in markers" :key="m.key"
+                    v-for="m in mapMarkers" :key="m.key"
                     class="loc"
                     :class="{ on: activeLoc === m.key, dim: activeLoc && activeLoc !== m.key }"
                     :style="{ transitionDelay: 1.4 + m.i * 0.25 + 's' }"
-                    @mouseenter="focusLoc(m.key)"
+                    @mouseenter="activeLoc = m.key"
                     @mouseleave="activeLoc = null"
                   >
                     <circle :cx="m.x" :cy="m.y" r="5" class="ring" :style="{ animationDelay: m.i * 0.5 + 's' }" />
