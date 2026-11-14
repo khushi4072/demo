@@ -127,7 +127,7 @@ const countFor = (tab: string) =>
 <style scoped>
 .projects-page {
   background: #f2f7f3;
-  color: var(--white);
+  color: var(--navy-900);
 }
 
 /* HERO */
@@ -193,7 +193,7 @@ const countFor = (tab: string) =>
   align-items: stretch;
   max-width: 860px;
   background: var(--white);
-  color: var(--white);
+  color: var(--navy-900);
   border-radius: 18px;
   box-shadow: 0 30px 60px -20px rgba(14, 12, 9, 0.45);
   overflow: hidden;
@@ -215,7 +215,7 @@ const countFor = (tab: string) =>
   border: 0;
   background: transparent;
   font: 600 18px var(--serif);
-  color: var(--white);
+  color: var(--navy-900);
   outline: none;
   cursor: pointer;
   padding: 0;

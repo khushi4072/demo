@@ -33,7 +33,10 @@ const year = new Date().getFullYear()
       </div>
     </div>
     <div class="bottom">
-      <div class="container">© {{ year }}, All rights reserved. VD Vanchers</div>
+      <div class="container">
+        <p>© {{ year }}, All rights reserved. VD Vanchers</p>
+        <p class="design-credit">Designed by <a href="https://www.thedigitaltraits.com/" target="_blank" rel="noopener noreferrer">The Digital Traits</a></p>
+      </div>
     </div>
   </footer>
 </template>
@@ -53,6 +56,8 @@ h4 { font-family: var(--sans); font-size: 20px; font-weight: 600; color: var(--n
 .ic svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .row a:hover { color: var(--navy-700); }
 .bottom { background: var(--mint-2); padding: 22px 0; font-size: 14px; }
+.design-credit { margin-top: 6px; font-size: 12px; }
+.design-credit a { color: var(--navy-800); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 1000px) { .cols { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) {
   .footer { padding-top: 40px; }
@@ -60,5 +65,6 @@ h4 { font-family: var(--sans); font-size: 20px; font-weight: 600; color: var(--n
   .brand p { margin: 16px 0; font-size: 14.5px; }
   h4 { margin-bottom: 12px; font-size: 18px; }
   .bottom { padding: 18px 0; font-size: 12.5px; }
+  .design-credit { font-size: 11.5px; }
 }
 </style>

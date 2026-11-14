@@ -81,6 +81,7 @@ async function submit() {
 .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; min-width: 0; }
 label { display: grid; gap: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-700); }
 input, select, textarea { box-sizing: border-box; display: block; min-width: 0; max-width: 100%; font: 400 15px var(--sans); color: var(--ink); text-transform: none; letter-spacing: 0; padding: 13px 14px; border: 1px solid #dcdfe6; border-radius: 10px; background: var(--card); width: 100%; transition: border-color .2s, box-shadow .2s; }
+input:not([type="hidden"]):not(.hp), select { height: 48px; }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(45,106,79,.2); background: var(--white); }
 textarea { resize: vertical; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
@@ -93,8 +94,8 @@ textarea { resize: vertical; }
 @media (max-width: 520px) {
   .grid { gap: 30px; }
   .info .h2 { color: #dcebdd; margin: 10px 0 14px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
-  .info > p { margin-bottom: 22px; font-size: 14.5px; line-height: 1.7; }
-  .info ul { gap: 16px; }
+  .info > p,
+  .info ul { display: none; }
   .info li { gap: 12px; font-size: 14px; }
   .ic { width: 42px; height: 42px; }
   .row { grid-template-columns: 1fr; }
