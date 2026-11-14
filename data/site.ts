@@ -29,10 +29,13 @@ export const navLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Projects', href: '/projects' },
   { label: 'What We Offer', href: '/what-we-offer' },
+  { label: 'Contact', href: '/contact' },
+]
+
+export const moreNavLinks = [
   { label: 'Gallery', href: '/gallery' },
   { label: 'Achievers', href: '/achievers' },
   { label: 'Blacklisted', href: '/blacklisted' },
-  { label: 'Contact', href: '/contact' },
 ]
 
 // Banner text follows OSR Realtech: pill label → heading (2nd line italic) → bordered subtext → 2 buttons
@@ -197,7 +200,7 @@ export const directors = {
   kicker: 'Leadership',
   title: 'The Minds Behind',
   accent: 'VD Vanchers.',
-  intro: 'Founded in Noida, VD Vanchers is guided by Chairman Vansh Thakur, with 15 years of real estate experience, and Director Deepanshu Goyal, with 12 years in the field. Together, they bring more than 27 years of industry experience to land development, project planning, and long-term client relationships.',
+  intro: 'Founded in Noida, VD Vanchers is guided by Chairman Vansh Thakur, with 15 years of real estate experience, and Co-Founder Deepanshu Goyal, with 12 years in the field. Together, they bring more than 27 years of industry experience to land development, project planning, and long-term client relationships.',
   people: [
     {
       name: 'Vansh Thakur',
@@ -209,10 +212,10 @@ export const directors = {
     },
     {
       name: 'Deepanshu Goyal',
-      role: 'Director',
+      role: 'Co-Founder',
       initials: 'DG',
       quote: '12 years of experience in real estate.',
-      bio: 'With 12 years of experience in real estate, Director Deepanshu Goyal supports project development and day-to-day leadership. He focuses on thoughtful planning, clear communication, and building lasting relationships with customers and partners.',
+      bio: 'With 12 years of experience in real estate, Co-Founder Deepanshu Goyal supports project development and day-to-day leadership. He focuses on thoughtful planning, clear communication, and building lasting relationships with customers and partners.',
       photo: '/images/director-deepanshu-goyal.jpg',
     },
   ],

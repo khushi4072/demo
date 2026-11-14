@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { navLinks, contact } from '~/data/site'
+import { navLinks, moreNavLinks, contact } from '~/data/site'
 
 const route = useRoute()
 const open = ref(false)
+const moreOpen = ref(false)
 const scrolled = ref(false)
 
 const onScroll = () => { scrolled.value = window.scrollY > 40 }
-const close = () => { open.value = false }
+const close = () => { open.value = false; moreOpen.value = false }
 const toggle = () => { open.value = !open.value }
 const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
 const onResize = () => { if (window.innerWidth > 1100) close() }
@@ -54,6 +55,22 @@ onBeforeUnmount(() => {
         <NuxtLink v-for="l in navLinks" :key="l.href" :to="l.href" class="nav-link" @click="close">
           <span>{{ l.label }}</span><i aria-hidden="true">›</i>
         </NuxtLink>
+        <div class="nav-more" :class="{ expanded: moreOpen, active: moreNavLinks.some((l) => route.path === l.href) }">
+          <button
+            class="nav-link more-toggle"
+            type="button"
+            aria-controls="more-nav-links"
+            :aria-expanded="moreOpen"
+            @click="moreOpen = !moreOpen"
+          >
+            <span>More</span><i aria-hidden="true">⌄</i>
+          </button>
+          <div id="more-nav-links" class="more-links">
+            <NuxtLink v-for="l in moreNavLinks" :key="l.href" :to="l.href" class="nav-link more-link" @click="close">
+              <span>{{ l.label }}</span><i aria-hidden="true">›</i>
+            </NuxtLink>
+          </div>
+        </div>
         <a :href="`tel:${contact.phoneHref}`" class="call" @click="close">Call Now</a>
 
         <!-- Sirf mobile menu me dikhega (topbar ki info yahin aa jati hai) -->
@@ -68,7 +85,9 @@ onBeforeUnmount(() => {
         </div>
       </nav>
 
-      <a :href="`tel:${contact.phoneHref}`" class="mini-call" aria-label="Call now">✆</a>
+      <a :href="`tel:${contact.phoneHref}`" class="mini-call" aria-label="Call now">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9 3l2 4.7-1.6 1.6a15 15 0 0 0 5.3 5.3l1.6-1.6 4.7 2-.5 2.4a2 2 0 0 1-2 1.6A16.5 16.5 0 0 1 5 5.5a2 2 0 0 1 1.6-2Z" /></svg>
+      </a>
       <button class="burger" type="button" :aria-expanded="open" aria-controls="site-nav" aria-label="Toggle menu" @click="toggle">
         <span /><span /><span />
       </button>
@@ -107,6 +126,21 @@ onBeforeUnmount(() => {
 .nav-link i { display: none; }
 .nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--gold); transition: width .25s; }
 .nav-link:hover::after, .nav-link.router-link-exact-active::after { width: 100%; }
+.nav-more { position: relative; }
+.more-toggle { border: 0; background: none; cursor: pointer; font-family: inherit; }
+.more-toggle i { display: inline-block; margin-left: 6px; font-size: 13px; font-style: normal; transition: transform .2s; }
+.nav-more.expanded .more-toggle i { transform: rotate(180deg); }
+.more-links {
+  position: absolute; top: calc(100% + 14px); right: 0; z-index: 4; display: grid; min-width: 190px;
+  padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 16px 34px -18px rgba(18,59,42,.35); opacity: 0; visibility: hidden;
+  transform: translateY(6px); transition: opacity .2s, transform .2s, visibility .2s;
+}
+.nav-more:hover .more-links, .nav-more:focus-within .more-links, .nav-more.expanded .more-links { opacity: 1; visibility: visible; transform: none; }
+.more-link { display: flex; padding: 11px 12px; border-radius: 6px; font-size: 12px; letter-spacing: .06em; }
+.more-link:hover { background: var(--mint); }
+.more-link i { display: none; }
+.nav-more.active > .more-toggle { color: var(--navy-700); }
 .call { flex: none; background: var(--navy-800); color: var(--white); padding: 12px 24px; border-radius: 6px; font-size: 13.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; transition: .2s; }
 .call:hover { background: var(--gold); color: var(--white); }
 .menu-contact, .mini-call, .burger, .scrim { display: none; }
@@ -122,7 +156,8 @@ onBeforeUnmount(() => {
   .topbar { display: none; }
   .bar, .scrolled .bar { height: 72px; }
 
-  .mini-call { display: grid; place-items: center; width: 42px; height: 42px; margin-left: auto; border-radius: 50%; background: var(--navy-800); color: var(--white); font-size: 18px; }
+  .mini-call { display: grid; place-items: center; width: 48px; height: 48px; margin-left: auto; border-radius: 50%; background: var(--navy-800); color: var(--white); flex: none; }
+  .mini-call svg { width: 23px; height: 23px; fill: currentColor; }
   .burger { display: block; flex: none; padding: 10px; border: 0; background: none; cursor: pointer; }
   .burger span { display: block; width: 26px; height: 2px; margin: 6px 0; background: var(--navy-900); transition: .3s; }
   .open .burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -144,6 +179,14 @@ onBeforeUnmount(() => {
   .nav-link::after { display: none; }
   .nav-link i { display: block; font-style: normal; font-size: 22px; line-height: 1; color: var(--gold); }
   .nav-link.router-link-exact-active { color: var(--gold); }
+  .nav-more { width: 100%; }
+  .more-toggle { width: 100%; text-align: left; }
+  .more-toggle i { font-size: 22px; }
+  .more-links { position: static; display: none; min-width: 0; padding: 0 0 4px 14px; border: 0; border-radius: 0; box-shadow: none; opacity: 1; visibility: visible; transform: none; }
+  .nav-more.expanded .more-links { display: grid; }
+  .more-link { padding: 13px 2px; font-size: 14px; }
+  .more-link i { display: block; }
+  .nav-more.active > .more-toggle { color: var(--navy-700); }
   .call { margin-top: 20px; padding: 16px; text-align: center; font-size: 14px; }
 
   .menu-contact { display: grid; gap: 8px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13.5px; color: #3d4a57; overflow-wrap: anywhere; }
@@ -157,9 +200,9 @@ onBeforeUnmount(() => {
 
 /* Chhote phones */
 @media (max-width: 480px) {
-  .bar, .scrolled .bar { height: 64px; gap: 10px; }
-  .nav { max-height: calc(100dvh - 64px); }
-  .mini-call { width: 38px; height: 38px; font-size: 16px; }
+  .bar, .scrolled .bar { height: 68px; gap: 10px; }
+  .nav { max-height: calc(100dvh - 68px); }
+  .mini-call { width: 48px; height: 48px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

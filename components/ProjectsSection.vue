@@ -125,6 +125,16 @@ h3 { font-size: 22px; color: var(--navy-900); margin: 18px 0 10px; }
 @media (max-width: 1000px) { .track { grid-auto-columns: calc((100% - 24px) / 2); } }
 @media (max-width: 760px) {
   .head { flex-direction: column; align-items: flex-start; }
-  .track { grid-auto-columns: 86%; }
+  .head { gap: 18px; margin-bottom: 24px; }
+  .head .h2 { margin: 10px 0 12px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
+  .head p { font-size: 14.5px; line-height: 1.7; }
+  .head-actions { width: 100%; flex-wrap: wrap; }
+  .track { grid-auto-columns: 88%; gap: 14px; padding-bottom: 18px; }
+  .body { padding: 18px 18px 20px; }
+  h3 { font-size: 21px; margin: 14px 0 8px; }
+  .loc, .desc { font-size: 13.5px; }
+  .foot { gap: 8px; margin-top: 14px; padding-top: 14px; }
+  .price strong { font-size: 17px; }
+  .explore { padding: 11px 14px; font-size: 10.5px; }
 }
 </style>

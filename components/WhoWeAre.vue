@@ -44,9 +44,15 @@ useReveal(root)
   .grid { grid-template-columns: 1fr; gap: 48px; }
 }
 @media (max-width: 560px) {
+  .grid { gap: 30px; }
+  .media { padding-bottom: 48px; }
   .frame { width: 100%; }
   .badge { width: 140px; height: 140px; border-width: 6px; top: auto; bottom: 120px; }
   .badge strong { font-size: 32px; }
   .circle { width: 170px; height: 170px; border-width: 6px; }
+  .text .label { font-size: 15px; letter-spacing: .06em; }
+  .text .h2 { margin: 12px 0 16px; font-size: clamp(40px, 10vw, 44px); line-height: 1.06; }
+  .text p { font-size: 15px; line-height: 1.75; margin-bottom: 24px; }
+  .text .btn-sq { min-height: 46px; padding: 12px 22px; }
 }
 </style>

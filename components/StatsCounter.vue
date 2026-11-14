@@ -55,4 +55,11 @@ p { margin-top: 14px; font-size: 11.5px; font-weight: 700; letter-spacing: .12em
   .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
   .stat { padding: 28px 22px; }
 }
+@media (max-width: 560px) {
+  .stats { padding: 8px 0 20px; }
+  .card { border-radius: 20px; }
+  .stat { padding: 22px 14px; }
+  strong { font-size: clamp(30px, 9vw, 38px); }
+  p { margin-top: 10px; font-size: 10px; letter-spacing: .08em; line-height: 1.45; }
+}
 </style>

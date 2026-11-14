@@ -63,5 +63,13 @@ figcaption { display: flex; align-items: center; gap: 14px; }
 figcaption strong { display: block; color: var(--navy-900); font-size: 16px; }
 figcaption small { color: var(--muted); font-size: 13.5px; }
 .foot { display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--line); margin-top: 30px; padding-top: 24px; }
-@media (max-width: 640px) { .card { padding: 30px 24px 26px; border-radius: 24px; } .qm { margin-left: 0; } }
+@media (max-width: 640px) {
+  .reviews.section { padding-bottom: 32px; }
+  .head { margin-bottom: 28px; }
+  .head .h2 { margin-top: 10px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
+  .review-note { font-size: 12.5px; }
+  .card { padding: 24px 20px 22px; border-radius: 20px; }
+  .qm { width: 40px; height: 40px; margin-left: 0; }
+  blockquote { font-size: 19px; line-height: 1.5; margin-bottom: 22px; }
+}
 </style>

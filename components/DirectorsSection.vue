@@ -236,14 +236,14 @@ blockquote::before {
   .cards { grid-template-columns: 1fr; max-width: 640px; }
 }
 @media (max-width: 640px) {
-  .directors { padding: 80px 0 90px; }
-  .head { margin-bottom: 44px; }
-  .head h2 { margin: 20px 0 16px; }
-  .head p { font-size: 15.5px; line-height: 1.7; }
+  .directors { padding: 56px 0; }
+  .head { margin-bottom: 32px; }
+  .head h2 { margin: 18px 0 14px; color: #dcebdd; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
+  .head p { font-size: 14.5px; line-height: 1.7; }
   .kick { gap: 12px; letter-spacing: .3em; }
   .kick i { width: 28px; }
 
-  .cards { gap: 28px; max-width: 420px; }
+  .cards { gap: 20px; max-width: 420px; }
   .card { grid-template-columns: minmax(0, 1fr); border-radius: 6px; }
 
   /* tall portrait so the face is never cropped */
@@ -262,10 +262,10 @@ blockquote::before {
   .index { left: 18px; bottom: 14px; }
   .monogram span { font-size: 80px; }
 
-  .body { padding: 28px 24px 24px; text-align: center; align-items: center; }
-  .body h3 { font-size: 26px; margin-top: 10px; }
-  .rule { margin: 18px auto; }
-  blockquote { font-size: 17px; line-height: 1.55; }
+  .body { padding: 24px 20px 20px; text-align: center; align-items: center; }
+  .body h3 { font-size: 24px; margin-top: 10px; }
+  .rule { margin: 16px auto; }
+  blockquote { font-size: 15.5px; line-height: 1.55; }
   blockquote::before { height: 24px; font-size: 54px; }
   .sign { margin-top: 18px; }
   .watermark { width: 320px; right: -100px; bottom: -80px; }

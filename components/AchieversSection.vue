@@ -37,7 +37,10 @@ h2 em { color: var(--navy-700); font-weight: 400; }
 .preview-photo:hover img { transform: scale(1.045); }
 .photo-number { position: absolute; left: 14px; bottom: 12px; color: #fff; font-size: 10px; letter-spacing: .14em; text-shadow: 0 1px 5px #000; }
 @media (max-width: 700px) {
+  .achievers-preview { padding: 56px 0; }
   .preview-head { align-items: flex-start; flex-direction: column; }
+  .preview-head { gap: 18px; margin-bottom: 24px; }
+  h2 { margin-top: 12px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
   .preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 }
 @media (max-width: 380px) { .preview-grid { gap: 8px; } }

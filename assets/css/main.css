@@ -73,7 +73,12 @@ p {
 
 @media (max-width: 768px) {
   .section {
-    padding: 64px 0;
+    padding: 56px 0;
+  }
+
+  .h2 {
+    font-size: clamp(36px, 9.5vw, 42px);
+    line-height: 1.1;
   }
 }
 
@@ -98,7 +103,7 @@ p {
 
 .h2 {
   font-size: clamp(32px, 4vw, 48px);
-  color: var(--white);
+  color: var(--navy-900);
 }
 
 .pill {

@@ -75,8 +75,14 @@ p { max-width: 640px; font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,2
 .dots button.active { width: 34px; background: var(--gold); }
 @media (max-width: 768px) {
   .arrow { display: none; }
-  .content { padding-left: 0; }
+  .content { padding: 88px 0 72px; justify-content: center; }
   .tag { font-size: 10px; letter-spacing: .06em; padding: 8px 14px; }
-  .hero { height: auto; min-height: 640px; }
+  .hero { height: auto; min-height: min(660px, calc(100svh - 68px)); }
+  h1 { color: #dcebdd; font-size: clamp(38px, 10.5vw, 48px); line-height: 1.06; margin: 22px 0 18px; }
+  h1 em { color: #dcebdd; }
+  p { font-size: 15px; line-height: 1.65; padding-left: 16px; margin-bottom: 26px; }
+  .actions { width: 100%; flex-direction: column; align-items: stretch; gap: 12px; }
+  .actions .pill { width: 100%; min-height: 50px; padding: 14px 18px; font-size: 11px; }
+  .dots { bottom: 20px; }
 }
 </style>

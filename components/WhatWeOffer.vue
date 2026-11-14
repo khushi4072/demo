@@ -57,5 +57,14 @@ useReveal(root)
 .tile span { position: relative; z-index: 1; color: var(--white); font-size: 26px; font-weight: 300; line-height: 1.3; }
 .tile:not(.photo) span::before { content: ''; display: block; width: 40px; height: 2px; background: var(--gold); margin-bottom: 18px; }
 @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; gap: 48px; } }
-@media (max-width: 560px) { .tile { padding: 20px; } .tile span { font-size: 18px; } .tiles { gap: 12px; } }
+@media (max-width: 560px) {
+  .grid { gap: 32px; }
+  .left .h2 { margin: 12px 0 22px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
+  .q button { gap: 12px; padding: 15px 0; font-size: 16px; line-height: 1.45; }
+  .a > p { font-size: 14.5px; line-height: 1.7; }
+  .open .a > p { padding-bottom: 18px; }
+  .tile { padding: 16px; }
+  .tile span { font-size: 16px; }
+  .tiles { gap: 10px; }
+}
 </style>

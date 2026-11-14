@@ -8,8 +8,8 @@
         "city": "Noida",
         "location": "Near Noida International Airport (Jewar), Noida",
         "price": "Price on request",
-        "image": "https://static.wixstatic.com/media/bdad78_4ea7ec97a2af402489d5c1a83f351255~mv2.jpg",
-        "cardImage": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+        "image": "/images/IMG_0112-scaled.jpg",
+        "cardImage": "/images/IMG_0112-scaled.jpg",
         "shortSummary": "A township near the upcoming international airport, with easy access to the Yamuna Expressway.",
         "overview": [
             "Located in the fast-growing city of Noida, VD Residency combines the convenience of city living with the calm of a suburban community. Major highways are within easy reach.",
@@ -65,7 +65,7 @@
         },
         "gallery": [
             {
-                "src": "https://static.wixstatic.com/media/bdad78_4ea7ec97a2af402489d5c1a83f351255~mv2.jpg",
+                "src": "/images/IMG_0112-scaled.jpg",
                 "caption": "Project banner"
             },
             {
@@ -94,8 +94,8 @@
         "city": "Vrindavan",
         "location": "Chhata, Mathura, Vrindavan",
         "price": "Price on request",
-        "image": "https://static.wixstatic.com/media/bdad78_79d966e70d0048db937a6bb3868cdf10~mv2.jpg",
-        "cardImage": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85",
+        "image": "/images/IMG_9984-scaled-e1754563184490.jpg",
+        "cardImage": "/images/IMG_9984-scaled-e1754563184490.jpg",
         "shortSummary": "A farmhouse community near Vrindavan with a clubhouse, pool, cricket ground, horse riding and a proposed helipad.",
         "overview": [
             "Located in the fast-developing city of Vrindavan, The Royal Farmhouse offers the convenience of the city with the serenity of a suburban community. Highway access is excellent.",
@@ -165,7 +165,7 @@
         },
         "gallery": [
             {
-                "src": "https://static.wixstatic.com/media/bdad78_79d966e70d0048db937a6bb3868cdf10~mv2.jpg",
+                "src": "/images/IMG_9984-scaled-e1754563184490.jpg",
                 "caption": "Project view"
             },
             {
@@ -269,8 +269,8 @@
         "city": "Yamuna Expressway",
         "location": "Yamuna Expressway, Noida",
         "price": "Price on request",
-        "image": "https://static.wixstatic.com/media/bdad78_85543e29d7e7492eb486aa0272621d87~mv2.jpg",
-        "cardImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85",
+        "image": "/images/IMG_9996-scaled.jpg",
+        "cardImage": "/images/IMG_9996-scaled.jpg",
         "shortSummary": "Farmhouses minutes from Galgotias University, Sports City and the Yamuna Expressway.",
         "overview": [
             "Located in the growing Noida region, The Highway Farms combines city convenience with the calm of a suburban community, with easy access to major highways.",
@@ -337,7 +337,7 @@
         },
         "gallery": [
             {
-                "src": "https://static.wixstatic.com/media/bdad78_85543e29d7e7492eb486aa0272621d87~mv2.jpg",
+                "src": "/images/IMG_9996-scaled.jpg",
                 "caption": "Project view"
             },
             {
