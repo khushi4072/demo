@@ -52,7 +52,9 @@ async function submit() {
             </select>
           </label>
         </div>
-        <label>Preferred Visit Date<input v-model="form.visitDate" type="date" /></label>
+        <div class="row date-row">
+          <label>Preferred Visit Date<input v-model="form.visitDate" type="date" /></label>
+        </div>
         <label>Message<textarea v-model.trim="form.message" rows="3" maxlength="1000" placeholder="Tell us what you're looking for" /></label>
         <button class="pill pill-dark submit" :disabled="state === 'sending'">
           {{ state === 'sending' ? 'Sending…' : 'Get a Call Back' }}
