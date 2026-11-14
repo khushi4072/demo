@@ -36,14 +36,14 @@ useReveal(root)
 <style scoped>
 .offer { background: var(--mint); }
 .grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 90px; align-items: center; }
-.gold { color: #9a7b45; }
+.gold { color: var(--navy-700); }
 .left .h2 { margin: 18px 0 34px; }
 .q + .q { border-top: 1px solid var(--navy-700); }
 .q button { width: 100%; display: flex; align-items: center; gap: 20px; text-align: left; background: none; border: 0; padding: 18px 0; font: 600 19px var(--sans); color: var(--ink); cursor: pointer; }
 .q button svg { flex: none; transition: transform .3s; }
 .q.open button svg { transform: rotate(180deg); }
 .a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
-.a > p { overflow: hidden; color: #3d4a57; font-size: 16px; }
+.a > p { overflow: hidden; color: var(--ink); font-size: 16px; }
 .a > p :deep(strong) { color: var(--navy-900); }
 .open .a { grid-template-rows: 1fr; }
 .open .a > p { padding-bottom: 26px; }

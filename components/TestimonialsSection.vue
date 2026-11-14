@@ -56,7 +56,7 @@ onBeforeUnmount(() => clearInterval(timer))
 .viewport { overflow: hidden; }
 .slides { display: flex; transition: transform .7s cubic-bezier(.7,0,.3,1); }
 figure { flex: 0 0 100%; margin: 0; padding: 10px 0 0; }
-.draft-label { display: inline-block; margin-bottom: 12px; color: #80643b; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.draft-label { display: inline-block; margin-bottom: 12px; color: var(--navy-700); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 blockquote { font-family: var(--serif); font-size: clamp(20px, 2.3vw, 27px); line-height: 1.5; color: var(--navy-900); margin: 0 0 30px; }
 figcaption { display: flex; align-items: center; gap: 14px; }
 .avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--navy-900); color: var(--gold-light); display: grid; place-items: center; font-weight: 700; letter-spacing: .04em; }

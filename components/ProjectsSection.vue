@@ -120,7 +120,7 @@ h3 { font-size: 22px; color: var(--navy-900); margin: 18px 0 10px; }
 .price small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #5a6573; }
 .price strong { font-family: var(--serif); font-size: 19px; color: var(--accent-blue); }
 .explore { display: inline-flex; align-items: center; gap: 8px; background: var(--navy-900); color: var(--white); padding: 12px 20px; border-radius: 999px; font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; transition: .2s; }
-.explore:hover { background: var(--gold); color: var(--navy-900); }
+.explore:hover { background: var(--gold); color: var(--white); }
 
 @media (max-width: 1000px) { .track { grid-auto-columns: calc((100% - 24px) / 2); } }
 @media (max-width: 760px) {

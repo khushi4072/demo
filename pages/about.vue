@@ -46,10 +46,11 @@ const vTextReveal = {
 const vReveal = {
   mounted(el: HTMLElement, binding: any) {
     const delay = binding.value?.delay ?? 0
-    el.style.opacity = '0'
-    el.style.transform = 'translateY(40px)'
+    el.style.opacity = '1'
+    el.style.transform = 'translateY(0)'
     el.style.transition = `opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)`
     el.style.transitionDelay = `${delay}ms`
+    if (!('IntersectionObserver' in window)) return
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         el.classList.add('is-revealed')
@@ -581,14 +582,14 @@ const focusLoc = (key: string) => {
                 <svg viewBox="-50 0 500 420" class="india-svg" role="img" aria-label="Map of India showing VD Vanchers locations">
                   <defs>
                     <pattern id="vd-dots" width="7" height="7" patternUnits="userSpaceOnUse">
-                      <circle cx="3.5" cy="3.5" r="0.9" fill="#c5a36a" />
+                      <circle cx="3.5" cy="3.5" r="0.9" fill="#2d6a4f" />
                     </pattern>
                     <clipPath id="vd-india">
                       <path :d="indiaPath" />
                     </clipPath>
                     <radialGradient id="vd-glow" cx="50%" cy="40%" r="60%">
-                      <stop offset="0%" stop-color="#c5a36a" stop-opacity="0.16" />
-                      <stop offset="100%" stop-color="#c5a36a" stop-opacity="0" />
+                      <stop offset="0%" stop-color="#2d6a4f" stop-opacity="0.16" />
+                      <stop offset="100%" stop-color="#2d6a4f" stop-opacity="0" />
                     </radialGradient>
                   </defs>
 
@@ -840,9 +841,9 @@ const focusLoc = (key: string) => {
 .about-page {
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
-  --gold: #c5a36a;
-  --bronze: #8c6b55;
-  --ink: #111111;
+  --gold: #2d6a4f;
+  --bronze: #1b5138;
+  --ink: #123b2a;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   background: #ffffff;
@@ -894,11 +895,11 @@ const focusLoc = (key: string) => {
   height: 34px;
   border-radius: 50%;
   border: 1px solid var(--gold);
-  background: rgba(197,163,106,0);
+  background: rgba(45,106,79,0);
   transition: transform 0.45s var(--ease), background 0.45s, border-color 0.45s;
 }
 
-.cursor.hover i { transform: scale(1.7); background: rgba(197,163,106,0.14); }
+.cursor.hover i { transform: scale(1.7); background: rgba(45,106,79,0.14); }
 
 @media (hover: none), (pointer: coarse) { .cursor { display: none; } }
 
@@ -912,7 +913,7 @@ const focusLoc = (key: string) => {
   margin-bottom: 20px;
 }
 
-.light-kicker { color: var(--gold); }
+.light-kicker { color: var(--gold-light); }
 
 .classy-h2 {
   font-family: var(--serif);
@@ -937,7 +938,7 @@ const focusLoc = (key: string) => {
 
 .about-page :deep(.word) {
   display: inline-block;
-  transform: translateY(115%);
+  transform: translateY(0);
   transition: transform 1.1s var(--ease);
   transition-delay: calc(var(--i, 0) * 45ms + 100ms);
 }
@@ -950,7 +951,7 @@ const focusLoc = (key: string) => {
 .classy-hero {
   position: relative;
   padding: 80px 0 140px;
-  background: #faf8f4;
+  background: #f2f7f3;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -976,7 +977,7 @@ const focusLoc = (key: string) => {
   height: 760px;
   right: -140px;
   top: -160px;
-  background: radial-gradient(circle, rgba(197,163,106,0.22), transparent 65%);
+  background: radial-gradient(circle, rgba(45,106,79,0.18), transparent 65%);
   pointer-events: none;
   animation: glowBreath 9s ease-in-out infinite;
 }
@@ -994,7 +995,7 @@ const focusLoc = (key: string) => {
   font-weight: 700;
   font-size: clamp(240px, 36vw, 560px);
   line-height: 1;
-  color: rgba(140,107,85,0.05);
+  color: rgba(18,59,42,0.06);
   transform: translate3d(0, calc(var(--p, 0) * -70px), 0);
   pointer-events: none;
   user-select: none;
@@ -1038,7 +1039,7 @@ const focusLoc = (key: string) => {
   font-style: italic;
   font-weight: 700;
   color: transparent;
-  background-image: linear-gradient(110deg, #4d2f22 0%, #7c4d29 25%, #b8863b 50%, #7c4d29 75%, #4d2f22 100%);
+  background-image: linear-gradient(110deg, #123b2a 0%, #1b5138 25%, #6f9f79 50%, #1b5138 75%, #123b2a 100%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -1084,7 +1085,7 @@ const focusLoc = (key: string) => {
   z-index: -1;
 }
 
-.btn-primary:hover { border-color: var(--bronze); box-shadow: 0 14px 34px rgba(140, 107, 85, 0.28); }
+.btn-primary:hover { border-color: var(--bronze); box-shadow: 0 14px 34px rgba(18, 59, 42, 0.28); }
 .btn-primary:hover::before { transform: translateY(0); }
 
 .btn-secondary {
@@ -1140,7 +1141,7 @@ const focusLoc = (key: string) => {
   position: absolute;
   inset: 0;
   transform: translate(22px, 22px);
-  border: 1px solid rgba(140,107,85,0.4);
+  border: 1px solid rgba(27,81,56,0.4);
   border-radius: 8px;
   z-index: -1;
 }
@@ -1218,7 +1219,7 @@ const focusLoc = (key: string) => {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #faf8f4;
+  background: #f2f7f3;
   box-shadow: 0 12px 30px rgba(26,26,26,0.12);
   z-index: 6;
 }
@@ -1277,7 +1278,7 @@ const focusLoc = (key: string) => {
   transition: width 0.5s var(--ease), background 0.3s;
 }
 
-.face-dot:hover { background: rgba(140,107,85,0.6); }
+.face-dot:hover { background: rgba(27,81,56,0.6); }
 .face-dot.active { width: 40px; background: var(--bronze); }
 .face-dot:focus-visible { outline: 2px solid var(--bronze); outline-offset: 4px; }
 
@@ -1296,7 +1297,7 @@ const focusLoc = (key: string) => {
   right: 0;
   bottom: 0;
   padding: 20px 0;
-  border-top: 1px solid rgba(140,107,85,0.18);
+  border-top: 1px solid rgba(27,81,56,0.18);
   background: rgba(250,248,244,0.7);
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
@@ -1335,7 +1336,7 @@ const focusLoc = (key: string) => {
 .presence {
   position: relative;
   padding: 120px 0;
-  background: #111111;
+  background: #123b2a;
   color: #ffffff;
   overflow: hidden;
 }
@@ -1345,7 +1346,7 @@ const focusLoc = (key: string) => {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(60% 50% at 75% 45%, rgba(197,163,106,0.1), transparent 70%),
+    radial-gradient(60% 50% at 75% 45%, rgba(45,106,79,0.16), transparent 70%),
     linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
   background-size: auto, 64px 64px, 64px 64px;
@@ -1389,7 +1390,7 @@ const focusLoc = (key: string) => {
   color: #f4f1ea;
 }
 
-.gold-text { color: var(--gold); font-style: italic; }
+.gold-text { color: var(--gold-light); font-style: italic; }
 
 .presence-desc { font-size: 16px; line-height: 1.8; color: #a0a0a0; margin-bottom: 40px; max-width: 460px; }
 
@@ -1420,7 +1421,7 @@ const focusLoc = (key: string) => {
   bottom: 0;
   width: 40%;
   left: -50%;
-  background: linear-gradient(100deg, transparent, rgba(197,163,106,0.16), transparent);
+  background: linear-gradient(100deg, transparent, rgba(45,106,79,0.18), transparent);
   transform: skewX(-18deg);
   pointer-events: none;
 }
@@ -1431,7 +1432,7 @@ const focusLoc = (key: string) => {
 .loc-row.active,
 .loc-row:focus-visible {
   padding-left: 16px;
-  background: linear-gradient(90deg, rgba(197,163,106,0.1), transparent);
+  background: linear-gradient(90deg, rgba(45,106,79,0.12), transparent);
   outline: none;
 }
 
@@ -1443,7 +1444,7 @@ const focusLoc = (key: string) => {
   height: 9px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(197,163,106,0.18);
+  box-shadow: 0 0 0 4px rgba(45,106,79,0.2);
   flex-shrink: 0;
 }
 
@@ -1470,8 +1471,8 @@ const focusLoc = (key: string) => {
 .loc-tag {
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: var(--gold);
-  border: 1px solid rgba(197,163,106,0.35);
+  color: var(--gold-light);
+  border: 1px solid rgba(45,106,79,0.4);
   padding: 5px 10px;
   border-radius: 2px;
   white-space: nowrap;
@@ -1485,7 +1486,7 @@ const focusLoc = (key: string) => {
   align-self: flex-end;
   display: flex;
   padding: 4px;
-  border: 1px solid rgba(197,163,106,0.3);
+  border: 1px solid rgba(45,106,79,0.38);
   border-radius: 40px;
   background: rgba(255,255,255,0.03);
 }
@@ -1507,7 +1508,7 @@ const focusLoc = (key: string) => {
   transition: color 0.4s;
 }
 
-.view-toggle button.on { color: #111; }
+.view-toggle button.on { color: #fff; }
 .view-toggle button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 .vt-pill {
@@ -1552,14 +1553,14 @@ const focusLoc = (key: string) => {
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  border: 1px solid rgba(197,163,106,0.22);
+  border: 1px solid rgba(45,106,79,0.3);
   pointer-events: none;
   z-index: 3;
   transition: border-color 0.5s;
 }
 
 .dest-panel.active::after,
-.dest-panel:focus-visible::after { border-color: rgba(197,163,106,0.75); }
+.dest-panel:focus-visible::after { border-color: rgba(145,191,155,0.8); }
 
 .dest-bg {
   position: absolute;
@@ -1611,7 +1612,7 @@ const focusLoc = (key: string) => {
 
 .dest-panel.active .dest-body { opacity: 1; transform: none; transition: opacity 0.6s 0.35s, transform 0.9s var(--ease) 0.3s; }
 
-.dest-note { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.dest-note { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 10px; }
 .dest-name { font-family: var(--serif); font-size: 52px; font-weight: 600; line-height: 1; color: #fff; margin: 0 0 14px; }
 .dest-blurb { font-size: 14.5px; line-height: 1.7; color: #d4cfc4; max-width: 340px; margin: 0 0 20px; }
 
@@ -1619,8 +1620,8 @@ const focusLoc = (key: string) => {
   display: inline-block;
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: var(--gold);
-  border: 1px solid rgba(197,163,106,0.45);
+  color: var(--gold-light);
+  border: 1px solid rgba(145,191,155,0.5);
   padding: 5px 10px;
   border-radius: 2px;
 }
@@ -1636,7 +1637,7 @@ const focusLoc = (key: string) => {
   top: 44%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(197,163,106,0) 0deg, rgba(197,163,106,0.16) 50deg, rgba(197,163,106,0) 52deg);
+  background: conic-gradient(from 0deg, rgba(45,106,79,0) 0deg, rgba(109,166,121,0.2) 50deg, rgba(45,106,79,0) 52deg);
   -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 70%);
   mask-image: radial-gradient(circle, #000 25%, transparent 70%);
   opacity: 0;
@@ -1655,7 +1656,7 @@ const focusLoc = (key: string) => {
 .in-view .land-dots { opacity: 0.38; }
 
 .india-outline {
-  fill: rgba(197,163,106,0.03);
+  fill: rgba(109,166,121,0.06);
   stroke: var(--gold);
   stroke-opacity: 0.55;
   stroke-width: 1.2;
@@ -1678,7 +1679,7 @@ const focusLoc = (key: string) => {
 }
 
 .in-view .route { stroke-dashoffset: 0; }
-.traveler { fill: #fff7e0; opacity: 0; filter: drop-shadow(0 0 4px #c5a36a); transition: opacity 0.6s ease 3.2s; }
+.traveler { fill: #e8f1ea; opacity: 0; filter: drop-shadow(0 0 4px #2d6a4f); transition: opacity 0.6s ease 3.2s; }
 .in-view .traveler { opacity: 1; }
 
 .leader {
@@ -1699,7 +1700,7 @@ const focusLoc = (key: string) => {
 .in-view .loc.dim { opacity: 0.45; }
 
 .loc .core { fill: var(--gold); stroke: #111; stroke-width: 1.5; }
-.loc .halo { fill: rgba(197,163,106,0.16); }
+.loc .halo { fill: rgba(109,166,121,0.2); }
 
 .loc .ring {
   fill: none;
@@ -1717,7 +1718,7 @@ const focusLoc = (key: string) => {
 
 .pill {
   fill: rgba(17,17,17,0.88);
-  stroke: rgba(197,163,106,0.35);
+  stroke: rgba(109,166,121,0.4);
   stroke-width: 1;
   transition: stroke 0.3s, fill 0.3s;
 }
@@ -1743,13 +1744,13 @@ const focusLoc = (key: string) => {
   height: 8px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(197,163,106,0.18);
+  box-shadow: 0 0 0 4px rgba(109,166,121,0.22);
 }
 
 /* ============================================================
    DIRECTORS
    ============================================================ */
-.directors-pro { padding: 120px 0; background: #faf8f4; }
+.directors-pro { padding: 120px 0; background: #f2f7f3; }
 
 .section-title-center { text-align: center; margin-bottom: 64px; }
 
@@ -1867,9 +1868,9 @@ const focusLoc = (key: string) => {
   transition: opacity 0.4s ease 0.2s, transform 0.5s var(--ease) 0.2s;
 }
 
-.hover-role { display: block; font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 8px; }
+.hover-role { display: block; font-size: 10px; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 8px; }
 .hover-name { font-family: var(--serif); font-size: 30px; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.05; }
-.hover-quote { font-family: var(--serif); font-size: 17px; color: var(--gold); font-style: italic; line-height: 1.45; margin-bottom: 12px; border-left: 2px solid var(--gold); padding-left: 12px; }
+.hover-quote { font-family: var(--serif); font-size: 17px; color: var(--gold-light); font-style: italic; line-height: 1.45; margin-bottom: 12px; border-left: 2px solid var(--gold-light); padding-left: 12px; }
 .hover-bio { font-size: 13px; color: #cccccc; line-height: 1.65; }
 
 .pro-card:hover .slide-details-panel,
@@ -1901,7 +1902,7 @@ const focusLoc = (key: string) => {
   font-size: clamp(260px, 34vw, 520px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(140,107,85,0.16);
+  -webkit-text-stroke: 1px rgba(27,81,56,0.16);
   transform: translate3d(calc(var(--p, 0) * -140px), -50%, 0);
   pointer-events: none;
   user-select: none;
@@ -2001,10 +2002,10 @@ const focusLoc = (key: string) => {
   position: relative;
   padding: 150px 0;
   background:
-    radial-gradient(50% 70% at 50% 50%, rgba(197,163,106,0.13), transparent 70%),
-    #faf8f4;
-  border-top: 1px solid rgba(140,107,85,0.15);
-  border-bottom: 1px solid rgba(140,107,85,0.15);
+    radial-gradient(50% 70% at 50% 50%, rgba(45,106,79,0.12), transparent 70%),
+    #f2f7f3;
+  border-top: 1px solid rgba(27,81,56,0.15);
+  border-bottom: 1px solid rgba(27,81,56,0.15);
   overflow: hidden;
   text-align: center;
 }
@@ -2017,7 +2018,7 @@ const focusLoc = (key: string) => {
   font-size: clamp(280px, 34vw, 520px);
   line-height: 1;
   font-weight: 700;
-  color: rgba(140,107,85,0.09);
+  color: rgba(18,59,42,0.1);
   transform: translate3d(-50%, calc(var(--p, 0) * 80px), 0);
   pointer-events: none;
   user-select: none;
@@ -2107,7 +2108,7 @@ const focusLoc = (key: string) => {
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(197,163,106,0.28), transparent 65%);
+  background: radial-gradient(circle, rgba(45,106,79,0.2), transparent 65%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -2128,7 +2129,7 @@ const focusLoc = (key: string) => {
   height: 360px;
   margin: -180px 0 0 -180px;
   border-radius: 50%;
-  border: 1px solid rgba(197,163,106,0.35);
+  border: 1px solid rgba(109,166,121,0.4);
   opacity: 0;
   pointer-events: none;
   animation: ringOut 7s ease-out infinite;
@@ -2146,7 +2147,7 @@ const focusLoc = (key: string) => {
   overflow: hidden;
   display: inline-block;
   background: var(--gold);
-  color: #111;
+  color: #fff;
   padding: 19px 52px;
   font-size: 15px;
   font-weight: 700;
@@ -2173,7 +2174,7 @@ const focusLoc = (key: string) => {
   100% { left: 140%; }
 }
 
-.btn-gold:hover { background: #d4af6a; box-shadow: 0 14px 40px rgba(197,163,106,0.38); }
+.btn-gold:hover { background: #3d7c5c; box-shadow: 0 14px 40px rgba(45,106,79,0.3); }
 
 /* ============================================================
    REDUCED MOTION

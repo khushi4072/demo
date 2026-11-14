@@ -61,15 +61,15 @@ const year = new Date().getFullYear()
 .social a:hover { background: var(--navy-800); color: var(--white); }
 h4 { font-family: var(--sans); font-size: 20px; font-weight: 600; color: var(--navy-900); margin: 4px 0 18px; }
 .links a { display: block; font-size: 14.5px; padding: 8px 0; border-bottom: 1px solid #d6dcd9; transition: color .2s; }
-.links a:hover { color: #9a7b45; }
+.links a:hover { color: var(--navy-700); }
 .subscribe { display: flex; border: 1px solid #d6dcd9; border-radius: 6px; overflow: hidden; background: var(--white); margin-bottom: 18px; }
 .subscribe input { flex: 1; min-width: 0; border: 0; padding: 12px 16px; font: 400 15px var(--sans); outline: none; }
 .subscribe button { border: 0; background: var(--navy-800); color: var(--white); padding: 0 24px; font: 500 13px var(--sans); text-transform: uppercase; cursor: pointer; transition: .2s; }
-.subscribe button:hover { background: var(--gold); color: var(--navy-900); }
+.subscribe button:hover { background: var(--navy-700); color: var(--white); }
 .sent { font-size: 13px; color: #1d6b3a; margin: -8px 0 12px; }
 .row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 16px; }
 .ic { width: 42px; height: 42px; flex: none; border-radius: 50%; background: var(--navy-800); color: var(--white); display: grid; place-items: center; font-size: 16px; }
-.row a:hover { color: #9a7b45; }
+.row a:hover { color: var(--navy-700); }
 .bottom { background: var(--mint-2); padding: 22px 0; font-size: 14px; }
 @media (max-width: 1000px) { .cols { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .cols { grid-template-columns: 1fr; gap: 36px; } }

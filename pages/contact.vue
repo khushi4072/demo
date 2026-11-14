@@ -359,12 +359,12 @@ const vMagnetic = {
 .contact-page {
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
-  --gold: #c5a36a;
-  --bronze: #8c6b55;
-  --ink: #1a1a1a;
+  --gold: #2d6a4f;
+  --bronze: #1b5138;
+  --ink: #123b2a;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-  background: #faf8f4;
+  background: #f2f7f3;
   color: var(--ink);
   overflow-x: hidden;
   font-family: var(--sans);
@@ -396,7 +396,7 @@ const vMagnetic = {
 
 .contact-page :deep(.word) {
   display: inline-block;
-  transform: translateY(115%);
+  transform: translateY(0);
   transition: transform 1.1s var(--ease);
   transition-delay: calc(var(--i, 0) * 45ms + 100ms);
 }
@@ -433,7 +433,7 @@ const vMagnetic = {
   height: 760px;
   right: -160px;
   top: -200px;
-  background: radial-gradient(circle, rgba(197,163,106,0.24), transparent 65%);
+  background: radial-gradient(circle, rgba(45,106,79,0.18), transparent 65%);
   animation: breath 9s ease-in-out infinite;
   pointer-events: none;
 }
@@ -451,7 +451,7 @@ const vMagnetic = {
   font-weight: 700;
   font-size: clamp(260px, 38vw, 600px);
   line-height: 1;
-  color: rgba(140,107,85,0.05);
+  color: rgba(18,59,42,0.06);
   pointer-events: none;
   user-select: none;
 }
@@ -495,7 +495,7 @@ const vMagnetic = {
 .highlight-text :deep(.word) {
   font-style: italic;
   color: transparent;
-  background-image: linear-gradient(100deg, #8c6b55 15%, #dcbb82 42%, #8c6b55 68%);
+  background-image: linear-gradient(100deg, #123b2a 15%, #6f9f79 42%, #123b2a 68%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -593,7 +593,7 @@ const vMagnetic = {
   height: 46px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(140,107,85,0.4);
+  border: 1px solid rgba(27,81,56,0.4);
   border-radius: 50%;
   color: var(--bronze);
   transition: background 0.4s var(--ease), color 0.4s, transform 0.4s var(--ease);
@@ -640,7 +640,7 @@ const vMagnetic = {
 }
 
 .copy-btn:hover { background: var(--bronze); color: #fff; border-color: var(--bronze); }
-.copy-btn.copied { background: #1a1a1a; color: var(--gold); border-color: #1a1a1a; }
+.copy-btn.copied { background: var(--ink); color: var(--gold-light); border-color: var(--ink); }
 .copy-btn:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
 
 /* ============================================================
@@ -663,7 +663,7 @@ const vMagnetic = {
 .spot {
   position: absolute;
   inset: 0;
-  background: radial-gradient(340px circle at var(--mx) var(--my), rgba(197,163,106,0.16), transparent 65%);
+  background: radial-gradient(340px circle at var(--mx) var(--my), rgba(45,106,79,0.14), transparent 65%);
   opacity: 0;
   transition: opacity 0.5s;
   pointer-events: none;
@@ -788,7 +788,7 @@ const vMagnetic = {
 }
 
 .chip:hover { border-color: var(--bronze); color: var(--ink); transform: translateY(-1px); }
-.chip.on { background: var(--ink); border-color: var(--ink); color: var(--gold); }
+.chip.on { background: var(--ink); border-color: var(--ink); color: #fff; }
 .chip:focus-visible { outline: 2px solid var(--bronze); outline-offset: 2px; }
 
 /* button */
@@ -800,7 +800,7 @@ const vMagnetic = {
   justify-content: center;
   gap: 10px;
   background: var(--gold);
-  color: #111;
+  color: #fff;
   padding: 19px 48px;
   font-family: var(--sans);
   font-size: 15px;
@@ -831,7 +831,7 @@ const vMagnetic = {
   100% { left: 140%; }
 }
 
-.btn-gold:hover { background: #d4af6a; box-shadow: 0 14px 40px rgba(197,163,106,0.4); }
+.btn-gold:hover { background: #3d7c5c; box-shadow: 0 14px 40px rgba(45,106,79,0.3); }
 .btn-gold:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .btn-gold:disabled { cursor: progress; }
 
@@ -896,10 +896,10 @@ const vMagnetic = {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(17,17,17,0.92);
+  background: rgba(18,59,42,0.96);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(197,163,106,0.4);
+  border: 1px solid rgba(109,166,121,0.45);
   padding: 8px 22px 8px 8px;
   border-radius: 60px;
   text-decoration: none;
@@ -918,10 +918,10 @@ const vMagnetic = {
   display: grid;
   place-items: center;
   background: linear-gradient(145deg, #2a2620, #14120f);
-  border: 1px solid rgba(197,163,106,0.5);
+  border: 1px solid rgba(109,166,121,0.55);
 }
 
-.avatar-mark { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--gold); line-height: 1; }
+.avatar-mark { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--gold-light); line-height: 1; }
 
 .avatar-badge {
   position: absolute;

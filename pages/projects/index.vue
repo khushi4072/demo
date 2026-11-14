@@ -126,8 +126,8 @@ const countFor = (tab: string) =>
 
 <style scoped>
 .projects-page {
-  background: #faf8f4;
-  color: var(--navy-900);
+  background: #f2f7f3;
+  color: var(--white);
 }
 
 /* HERO */
@@ -138,7 +138,7 @@ const countFor = (tab: string) =>
   align-items: center;
   padding: 130px 0 160px;
   color: #fff;
-  background: #1d1b18;
+  background: #123b2a;
   overflow: visible;
   isolation: isolate;
 }
@@ -158,9 +158,9 @@ const countFor = (tab: string) =>
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(to right, rgba(14, 12, 9, 0.68) 0%, rgba(14, 12, 9, 0.3) 48%, rgba(14, 12, 9, 0.05) 100%),
-    linear-gradient(to top, rgba(14, 12, 9, 0.5) 0%, rgba(14, 12, 9, 0) 40%),
-    linear-gradient(to bottom, rgba(14, 12, 9, 0.35) 0%, rgba(14, 12, 9, 0) 22%);
+    linear-gradient(to right, rgba(12, 45, 32, 0.78) 0%, rgba(12, 45, 32, 0.38) 48%, rgba(12, 45, 32, 0.05) 100%),
+    linear-gradient(to top, rgba(12, 45, 32, 0.58) 0%, rgba(12, 45, 32, 0) 40%),
+    linear-gradient(to bottom, rgba(12, 45, 32, 0.4) 0%, rgba(12, 45, 32, 0) 22%);
 }
 .hero-inner {
   position: relative;
@@ -193,7 +193,7 @@ const countFor = (tab: string) =>
   align-items: stretch;
   max-width: 860px;
   background: var(--white);
-  color: var(--navy-900);
+  color: var(--white);
   border-radius: 18px;
   box-shadow: 0 30px 60px -20px rgba(14, 12, 9, 0.45);
   overflow: hidden;
@@ -215,7 +215,7 @@ const countFor = (tab: string) =>
   border: 0;
   background: transparent;
   font: 600 18px var(--serif);
-  color: var(--navy-900);
+  color: var(--white);
   outline: none;
   cursor: pointer;
   padding: 0;
@@ -224,7 +224,7 @@ const countFor = (tab: string) =>
   cursor: default;
 }
 .finder-field:focus-within {
-  background: #faf8f4;
+  background: #f2f7f3;
 }
 .btn-gold {
   display: inline-flex;
@@ -232,7 +232,7 @@ const countFor = (tab: string) =>
   justify-content: center;
   padding: 0 34px;
   background: var(--gold);
-  color: var(--navy-900);
+  color: var(--white);
   font: 700 14px var(--sans);
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -252,7 +252,7 @@ const countFor = (tab: string) =>
 .trust {
   padding: 230px 0 44px;
   margin-top: -190px;
-  background: #faf8f4;
+  background: #f2f7f3;
 }
 .trust-inner {
   display: flex;
@@ -381,7 +381,7 @@ const countFor = (tab: string) =>
   padding: 6px 12px;
   border-radius: 3px;
   background: var(--gold);
-  color: var(--navy-900);
+  color: var(--white);
   font: 700 12px var(--sans);
 }
 .price-tag {
@@ -408,7 +408,7 @@ const countFor = (tab: string) =>
 }
 .type {
   font-size: 13px;
-  color: #9a7b3f;
+  color: var(--navy-700);
   font-weight: 600;
 }
 .project-body h3 {

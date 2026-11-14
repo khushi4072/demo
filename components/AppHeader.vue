@@ -108,7 +108,7 @@ onBeforeUnmount(() => {
 .nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--gold); transition: width .25s; }
 .nav-link:hover::after, .nav-link.router-link-exact-active::after { width: 100%; }
 .call { flex: none; background: var(--navy-800); color: var(--white); padding: 12px 24px; border-radius: 6px; font-size: 13.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; transition: .2s; }
-.call:hover { background: var(--gold); color: var(--navy-900); }
+.call:hover { background: var(--gold); color: var(--white); }
 .menu-contact, .mini-call, .burger, .scrim { display: none; }
 
 /* Laptop: thoda tight, taaki zyada links bhi fit ho jayein */

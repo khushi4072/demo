@@ -72,7 +72,7 @@ async function submit() {
 .info > p { color: rgba(255,255,255,.75); margin-bottom: 34px; font-size: 16.5px; }
 .info ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
 .info li { display: flex; gap: 16px; align-items: center; }
-.ic { width: 46px; height: 46px; flex: none; border-radius: 50%; background: var(--gold); color: var(--navy-900); display: grid; place-items: center; font-size: 17px; }
+.ic { width: 46px; height: 46px; flex: none; border-radius: 50%; background: var(--gold); color: var(--white); display: grid; place-items: center; font-size: 17px; }
 .info small { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.55); }
 .info a:hover { color: var(--gold-light); }
 
@@ -81,7 +81,7 @@ async function submit() {
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 label { display: grid; gap: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy-700); }
 input, select, textarea { font: 400 15px var(--sans); color: var(--ink); text-transform: none; letter-spacing: 0; padding: 13px 14px; border: 1px solid #dcdfe6; border-radius: 10px; background: var(--card); width: 100%; transition: border-color .2s, box-shadow .2s; }
-input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(197,163,106,.2); background: var(--white); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(45,106,79,.2); background: var(--white); }
 textarea { resize: vertical; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .submit { width: 100%; margin-top: 6px; }

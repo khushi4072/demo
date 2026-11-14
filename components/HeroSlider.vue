@@ -53,7 +53,7 @@ onBeforeUnmount(() => clearInterval(timer))
 .slide.active .bg { transform: scale(1); }
 .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,28,46,.9) 0%, rgba(15,28,46,.62) 48%, rgba(15,28,46,.15) 100%); }
 .content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding-left: 48px; }
-.content > * { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+.content > * { opacity: 1; transform: none; transition: opacity .8s ease, transform .8s ease; }
 .slide.active .content > * { opacity: 1; transform: none; }
 .slide.active .content > :nth-child(2) { transition-delay: .15s; }
 .slide.active .content > :nth-child(3) { transition-delay: .3s; }
@@ -68,7 +68,7 @@ p { max-width: 640px; font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,2
 .actions .pill-outline { color: var(--white); border-color: rgba(255,255,255,.7); }
 
 .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); background: rgba(15,28,46,.3); color: var(--white); font-size: 26px; cursor: pointer; transition: .2s; }
-.arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--navy-900); }
+.arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
 .left { left: 20px; } .right { right: 20px; }
 .dots { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px; }
 .dots button { width: 10px; height: 10px; border-radius: 999px; border: 0; padding: 0; background: rgba(255,255,255,.45); cursor: pointer; transition: width .3s, background .3s; }
