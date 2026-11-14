@@ -25,6 +25,9 @@ export const navLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Projects', href: '/projects' },
   { label: 'What We Offer', href: '/what-we-offer' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Achievers', href: '/achievers' },
+  { label: 'Blacklisted', href: '/blacklisted' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -244,8 +247,11 @@ export const footer = {
   quickLinks: [
     { label: 'About Us', href: '/about' },
     { label: 'Projects', href: '/projects' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Our Directors', href: '/#directors' },
-    { label: 'What We Offer', href: '/#offer' },
+    { label: 'What We Offer', href: '/what-we-offer' },
+    { label: 'Our Achievers', href: '/achievers' },
+    { label: 'Blacklisted Notice', href: '/blacklisted' },
     { label: 'Testimonials', href: '/#testimonials' },
   ],
   findUs: [
