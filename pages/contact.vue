@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onUnmounted } from 'vue'
+import { contact } from '~/data/site'
 
 useHead({
   title: 'Contact Us | VD Vanchers — Premium Farmhouse Living',
@@ -211,7 +212,7 @@ const vMagnetic = {
                     A-33, 5th Floor, Sector-136,<br />
                     Noida - 201304
                   </p>
-                  <a href="tel:+919289245099" class="call-line">
+                  <a :href="`tel:${contact.phoneHref}`" class="call-line">
                     <span class="call-icon">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z" />
@@ -219,7 +220,7 @@ const vMagnetic = {
                     </span>
                     <span class="call-text">
                       <span class="action-label">Direct Line</span>
-                      <span class="action-value">+91-9289245099</span>
+                      <span class="action-value">{{ contact.phone }}</span>
                     </span>
                   </a>
                 </div>
@@ -330,7 +331,7 @@ const vMagnetic = {
 
     <!-- ========== CONCIERGE CALL WIDGET ========== -->
     <div class="advisor-call-widget">
-      <a href="tel:+919289245099" class="advisor-card" aria-label="Call a senior advisor now">
+      <a :href="`tel:${contact.phoneHref}`" class="advisor-card" aria-label="Call a senior advisor now">
         <div class="avatar-container">
           <div class="pulse-wave"></div>
           <div class="pulse-wave delay"></div>

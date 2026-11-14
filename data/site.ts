@@ -11,13 +11,17 @@ export const brand = {
 }
 
 export const contact = {
-  phone: '+91 92892 45099',
+  phone: '+91-9289245099',
   phoneHref: '+919289245099',
   email: 'info@vanchers.com',
   address: 'A-33, 5th Floor, Sector 136, Noida – 201304',
   shortAddress: 'Sector 136, Noida',
   // Add the real profile URLs here; icons appear only for entries that exist.
-  socials: [] as { name: string; href: string; icon: 'facebook' | 'instagram' | 'youtube' | 'linkedin' }[],
+  socials: [
+    { name: 'Instagram', href: 'https://www.instagram.com/vd_vanchers?vrfl=M2J4eGVoY3J3MDVz', icon: 'instagram' },
+    { name: 'Facebook', href: 'https://www.facebook.com/share/19fPGBuUbD/', icon: 'facebook' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/vdvancher/', icon: 'linkedin' },
+  ] as { name: string; href: string; icon: 'facebook' | 'instagram' | 'youtube' | 'linkedin' }[],
 }
 
 export const navLinks = [
@@ -193,20 +197,22 @@ export const directors = {
   kicker: 'Leadership',
   title: 'The Minds Behind',
   accent: 'VD Vanchers.',
-  intro: 'Founded in 2019 in Noida, VD Group is led by two directors who share one standard: every acre we develop should be one we would be proud to own.',
+  intro: 'Founded in Noida, VD Vanchers is guided by Chairman Vansh Thakur, with 15 years of real estate experience, and Director Deepanshu Goyal, with 12 years in the field. Together, they bring more than 27 years of industry experience to land development, project planning, and long-term client relationships.',
   people: [
     {
       name: 'Vansh Thakur',
-      role: 'Founder & Director',
+      role: 'Chairman',
       initials: 'VT',
-      quote: 'Ambitious and driven, thrive on challenge and constantly set goals.',
+      quote: '15 years of experience in real estate.',
+      bio: 'With 15 years of experience in real estate, Chairman Vansh Thakur leads the company’s vision and long-term direction. His work focuses on identifying promising locations, shaping considered developments, and keeping customer confidence at the centre of every decision.',
       photo: '/images/director-vansh-thakur.jpg',
     },
     {
       name: 'Deepanshu Goyal',
-      role: 'Co-Founder & Director',
+      role: 'Director',
       initials: 'DG',
-      quote: 'Always looking for an opportunity to do better and achieve greatness.',
+      quote: '12 years of experience in real estate.',
+      bio: 'With 12 years of experience in real estate, Director Deepanshu Goyal supports project development and day-to-day leadership. He focuses on thoughtful planning, clear communication, and building lasting relationships with customers and partners.',
       photo: '/images/director-deepanshu-goyal.jpg',
     },
   ],
@@ -217,12 +223,91 @@ export const testimonials = [
     name: 'Azam Siddique',
     role: 'Delhi',
     quote: 'The service provided by VD Vanchers was incredible. They helped me to clear all my doubts & queries about purchasing the property. Thanks for all your help & support.',
+    draft: false,
   },
-  // PLACEHOLDER — replace with a real client review
   {
-    name: 'Client Name',
-    role: 'Farmhouse Owner, Noida',
-    quote: 'From the first site visit to registration, the team kept everything transparent. We always knew what the next step was.',
+    name: 'Sample Review 02',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 03',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 04',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 05',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 06',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 07',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 08',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 09',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 10',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 11',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 12',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 13',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 14',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
+  },
+  {
+    name: 'Sample Review 15',
+    role: 'Draft — replace with approved client feedback',
+    quote: 'Add an approved client review here before publishing this testimonial.',
+    draft: true,
   },
 ]
 
