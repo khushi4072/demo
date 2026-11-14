@@ -327,6 +327,24 @@ const PILL_H = 38
 // img: replace with real photos of each location
 const locations = [
   {
+    key: 'delhi', name: 'Delhi', note: 'National capital region',
+    blurb: 'A central point in the NCR, connected to the region’s growing residential corridors.',
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80',
+    lon: 77.209, lat: 28.614, side: 'left', lx: -40, ly: 14,
+  },
+  {
+    key: 'gurugram', name: 'Gurugram', note: 'Delhi NCR',
+    blurb: 'A major NCR destination with established business districts and residential communities.',
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80',
+    lon: 77.027, lat: 28.459, side: 'left', lx: -40, ly: 60,
+  },
+  {
+    key: 'faridabad', name: 'Faridabad', note: 'Delhi NCR',
+    blurb: 'A well-connected NCR city with established neighbourhoods and access to Delhi.',
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80',
+    lon: 77.318, lat: 28.409, side: 'left', lx: -40, ly: 202,
+  },
+  {
     key: 'noida', name: 'Noida', note: 'Delhi NCR growth corridor',
     blurb: 'A growth corridor where land holds its value, minutes from the city.',
     img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80',
@@ -355,21 +373,7 @@ const markers = computed(() =>
   })
 )
 
-const nearbyCities = [
-  { key: 'delhi', name: 'Delhi', note: 'National capital', lon: 77.209, lat: 28.614, side: 'left', lx: -40, ly: 14 },
-  { key: 'gurugram', name: 'Gurugram', note: 'Delhi NCR', lon: 77.027, lat: 28.459, side: 'left', lx: -40, ly: 60 },
-  { key: 'faridabad', name: 'Faridabad', note: 'Delhi NCR', lon: 77.318, lat: 28.409, side: 'left', lx: -40, ly: 202 },
-]
-
-const mapMarkers = computed(() => [
-  ...markers.value,
-  ...nearbyCities.map((l, i) => {
-    const [x, y] = project(l.lon, l.lat)
-    return { ...l, x, y, ax: l.lx + PILL_W, ay: l.ly + PILL_H / 2, i: markers.value.length + i }
-  }),
-])
-
-// route runs north to south: Dehradun -> Noida -> Vrindavan
+// Route animates across the locations shown on the map.
 const routePath = computed(() => {
   const pts = [...markers.value].sort((a, b) => a.y - b.y)
   return pts
@@ -621,7 +625,7 @@ const focusLoc = (key: string) => {
 
                   <g class="leaders">
                     <line
-                      v-for="m in mapMarkers" :key="'l-' + m.key"
+                      v-for="m in markers" :key="'l-' + m.key"
                       :x1="m.x" :y1="m.y" :x2="m.ax" :y2="m.ay"
                       class="leader"
                       :class="{ on: activeLoc === m.key, dim: activeLoc && activeLoc !== m.key }"
@@ -630,11 +634,11 @@ const focusLoc = (key: string) => {
                   </g>
 
                   <g
-                    v-for="m in mapMarkers" :key="m.key"
+                    v-for="m in markers" :key="m.key"
                     class="loc"
                     :class="{ on: activeLoc === m.key, dim: activeLoc && activeLoc !== m.key }"
                     :style="{ transitionDelay: 1.4 + m.i * 0.25 + 's' }"
-                    @mouseenter="activeLoc = m.key"
+                    @mouseenter="focusLoc(m.key)"
                     @mouseleave="activeLoc = null"
                   >
                     <circle :cx="m.x" :cy="m.y" r="5" class="ring" :style="{ animationDelay: m.i * 0.5 + 's' }" />
