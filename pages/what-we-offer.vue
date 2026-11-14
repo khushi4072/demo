@@ -173,7 +173,7 @@ const values = [
 </template>
 
 <style scoped>
-.offer-page { --cream: #f5f2eb; --deep: #101d2e; --gold: #c5a36a; background: var(--cream); color: var(--deep); }
+.offer-page { --cream: #f5f2eb; --deep: #101d2e; --gold: #c5a36a; background: var(--cream); color: var(--deep); overflow-x: clip; }
 .section-pad { padding: clamp(76px, 10vw, 140px) 0; }
 .offer-hero { position: relative; min-height: min(810px, calc(100svh - 108px)); display: flex; align-items: flex-end; overflow: hidden; background: var(--deep); color: white; }
 .hero-image, .hero-shade { position: absolute; inset: 0; }
@@ -276,13 +276,15 @@ const values = [
   .experience-card:last-child .experience-photo { height: 100%; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 20px; }
   .hero-index { display: none; }
+  .amenity-copy > p:not(.eyebrow) { max-width: 600px; }
 }
 @media (max-width: 600px) {
   .offer-hero { min-height: 700px; min-height: min(760px, calc(100svh - 80px)); }
-  .hero-content { padding-bottom: 28px; }
+  .hero-content { padding-top: 76px; padding-bottom: 28px; }
   .offer-hero h1 { font-size: clamp(56px, 16vw, 82px); }
+  .hero-copy { max-width: 100%; font-size: 15px; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 14px; }
-  .hero-foot { margin-top: 48px; font-size: 8px; }
+  .hero-foot { flex-wrap: wrap; gap: 8px 18px; margin-top: 48px; font-size: 8px; letter-spacing: .1em; }
   .intro-grid { gap: 24px; }
   .proof-row { gap: 22px; flex-wrap: wrap; }
   .proof strong { font-size: 26px; }
@@ -291,13 +293,23 @@ const values = [
   .experience-card:last-child .experience-photo { aspect-ratio: 1.16 / 1; }
   .amenity-tiles { gap: 9px; }
   .amenity-tile, .amenity-tile.wide { min-height: 170px; padding: 16px; }
-  .amenity-tile h3 { font-size: 19px; }
+  .amenity-tile h3 { max-width: calc(100% - 18px); padding-right: 20px; font-size: 19px; overflow-wrap: anywhere; }
   .tile-mark { right: 12px; bottom: 14px; }
   .value-grid { grid-template-columns: 1fr; }
   .value-card, .value-card + .value-card { padding: 24px 0; border-left: 0; border-bottom: 1px solid #dcd8cf; }
   .value-card h3 { margin-top: 13px; }
   .faq-item button { font-size: 17px; }
   .closing-cta { padding: 70px 0; }
+}
+@media (max-width: 380px) {
+  .offer-hero .container, .section-pad .container, .closing-cta .container { width: min(100% - 28px, 1280px); }
+  .offer-hero h1 { font-size: clamp(48px, 15vw, 58px); }
+  .hero-foot { flex-direction: column; align-items: flex-start; }
+  .proof-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; }
+  .amenity-tiles { grid-template-columns: 1fr; }
+  .amenity-tile, .amenity-tile.wide { min-height: 150px; }
+  .experience-content { padding: 23px 20px 26px; }
+  .faq-item button { font-size: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .experience-photo img, .amenity-tile img, .button, .arrow-link span { transition: none; }
