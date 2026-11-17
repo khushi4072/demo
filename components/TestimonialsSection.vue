@@ -133,7 +133,6 @@ onBeforeUnmount(() => {
               :key="i"
               :aria-hidden="i !== current"
             >
-              <span class="sample-label">Sample testimonial</span>
 
               <blockquote>
                 “{{ t.quote }}”
