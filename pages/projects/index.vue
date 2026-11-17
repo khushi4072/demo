@@ -11,20 +11,47 @@ useHead({
   }],
 })
 
-const cities = [...new Set(projects.map((project) => project.city))]
+// Use the requested display locations for project filtering.
+const getProjectLocation = (project: (typeof projects)[number]) => {
+  const projectName = project.name.trim().toLowerCase().replace(/[^a-z0-9]+/g, ' ')
+  const projectCity = project.city.trim().toLowerCase()
+
+  // Match the project name flexibly so minor naming differences do not break filtering.
+  if (projectName.includes('highway') && projectName.includes('farm')) return 'Noida'
+  if (projectName.includes('royal') && projectName.includes('farm')) return 'Chhata'
+  if (projectCity.includes('yamuna expressway')) return 'Tappal'
+
+  return project.city
+}
+
+// Keep all requested locations available in the filters even if project data changes.
+const cities = [...new Set([
+  ...projects.map(getProjectLocation),
+  'Chhata',
+  'Noida',
+  'Tappal',
+])]
 const categoryTabs = ['All', ...cities]
 const activeTab = ref('All')
 
 const visibleProjects = computed(() =>
-  activeTab.value === 'All' ? projects : projects.filter((project) => project.city === activeTab.value),
+  activeTab.value === 'All'
+    ? projects
+    : projects.filter((project) => getProjectLocation(project) === activeTab.value),
 )
 
-// Hero ke liye high-resolution photo (1920px). Apni khud ki drone/site photo lagani ho to
-// is URL ki jagah '/images/hero-projects.jpg' (public folder) likh do.
+// Hero banner (Unsplash, free to use). Dusk pe lighted modern villa, premium look.
+// Doosre options (sirf photo-ID wala hissa badlo):
+//   photo-1758192838598-a1de4da5dcaf  -> sunset infinity pool villa
+//   photo-1759372945658-1e9f56e751bd  -> twilight villa with pool
+// Apni photo ke liye: '/images/hero-farmhouse.jpg' (public/images/ me rakho).
 const HERO_IMAGE =
-  'https://static.wixstatic.com/media/84770f_0018c709d8b74dfa93fd0cd11e139b8c~mv2_d_5760_3840_s_4_2.jpg/v1/fill/w_1920,h_1280,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/84770f_0018c709d8b74dfa93fd0cd11e139b8c~mv2_d_5760_3840_s_4_2.jpg'
+  'https://images.unsplash.com/photo-1757524492552-d47a66a2b63e?fm=jpg&q=80&w=1920&auto=format&fit=crop'
+
 const countFor = (tab: string) =>
-  tab === 'All' ? projects.length : projects.filter((p) => p.city === tab).length
+  tab === 'All'
+    ? projects.length
+    : projects.filter((project) => getProjectLocation(project) === tab).length
 </script>
 
 <template>
@@ -32,11 +59,13 @@ const countFor = (tab: string) =>
     <section class="hero">
       <img class="hero-bg" :src="HERO_IMAGE" alt="" fetchpriority="high" />
       <div class="container hero-inner">
-        <h1>Land and farmhouses worth coming home to.</h1>
-        <p>
-          Residential plots and farmhouse communities across Noida, Vrindavan, Dehradun and the
-          Yamuna Expressway corridor, chosen for lifestyle and long-term value.
-        </p>
+        <div class="hero-copy">
+          <h1>Land and Farmhouses Worth Coming Home To.</h1>
+          <p>
+            Residential plots and farmhouse communities across Noida, Vrindavan, Dehradun and
+            Tappal, chosen for lifestyle and long-term value.
+          </p>
+        </div>
 
         <div class="finder">
           <label class="finder-field">
@@ -60,7 +89,8 @@ const countFor = (tab: string) =>
       <div class="container trust-inner">
         <div><strong>700+</strong><span>farmhouses developed</span></div>
         <div><strong>{{ cities.length }}</strong><span>high-growth locations</span></div>
-        <div><strong>{{ projects.length }}</strong><span>projects</span></div>
+        <div><strong>3</strong><span>delivered</span></div>
+        <div><strong>2</strong><span>ongoing</span></div>
         <NuxtLink to="/about" class="trust-link">Our story</NuxtLink>
       </div>
     </section>
@@ -126,7 +156,7 @@ const countFor = (tab: string) =>
 
 <style scoped>
 .projects-page {
-  background: #f2f7f3;
+  background: #faf8f4;
   color: var(--navy-900);
 }
 
@@ -138,7 +168,7 @@ const countFor = (tab: string) =>
   align-items: center;
   padding: 130px 0 160px;
   color: #fff;
-  background: #123b2a;
+  background: #1d1b18;
   overflow: visible;
   isolation: isolate;
 }
@@ -157,14 +187,19 @@ const countFor = (tab: string) =>
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  /* overlay thoda right tak failaya taaki shifted text padhne me aaye */
   background:
-    linear-gradient(to right, rgba(12, 45, 32, 0.78) 0%, rgba(12, 45, 32, 0.38) 48%, rgba(12, 45, 32, 0.05) 100%),
-    linear-gradient(to top, rgba(12, 45, 32, 0.58) 0%, rgba(12, 45, 32, 0) 40%),
-    linear-gradient(to bottom, rgba(12, 45, 32, 0.4) 0%, rgba(12, 45, 32, 0) 22%);
+    linear-gradient(to right, rgba(14, 12, 9, 0.7) 0%, rgba(14, 12, 9, 0.4) 55%, rgba(14, 12, 9, 0.08) 100%),
+    linear-gradient(to top, rgba(14, 12, 9, 0.5) 0%, rgba(14, 12, 9, 0) 40%),
+    linear-gradient(to bottom, rgba(14, 12, 9, 0.35) 0%, rgba(14, 12, 9, 0) 22%);
 }
 .hero-inner {
   position: relative;
   width: 100%;
+}
+.hero-copy {
+  /* text ko right shift karne ke liye: 8vw ko 5vw ya 12vw karke adjust karo */
+  margin-left: clamp(0px, 8vw, 140px);
 }
 .hero h1 {
   max-width: 760px;
@@ -185,7 +220,7 @@ const countFor = (tab: string) =>
 /* FINDER */
 .finder {
   position: absolute;
-  left: 0;
+  left: clamp(0px, 8vw, 140px);
   right: 0;
   bottom: -190px;
   display: grid;
@@ -224,7 +259,7 @@ const countFor = (tab: string) =>
   cursor: default;
 }
 .finder-field:focus-within {
-  background: #f2f7f3;
+  background: #faf8f4;
 }
 .btn-gold {
   display: inline-flex;
@@ -252,7 +287,7 @@ const countFor = (tab: string) =>
 .trust {
   padding: 230px 0 44px;
   margin-top: -190px;
-  background: #f2f7f3;
+  background: #faf8f4;
 }
 .trust-inner {
   display: flex;
@@ -473,8 +508,12 @@ const countFor = (tab: string) =>
     min-height: 0;
     padding: 90px 0 60px;
   }
+  .hero-copy {
+    margin-left: 0;
+  }
   .finder {
     position: static;
+    left: auto;
     margin-top: 34px;
     grid-template-columns: 1fr;
   }

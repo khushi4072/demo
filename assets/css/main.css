@@ -1,17 +1,17 @@
-/* Forest green and white brand palette. */
+/* Original navy-and-gold brand palette. */
 :root {
-  --navy-900: #123b2a;
-  --navy-800: #1b5138;
-  --navy-700: #2d6a4f;
-  --accent-blue: #2d6a4f;
-  --gold: #2d6a4f;
-  --gold-light: #dcebdd;
-  --mint: #f2f7f3;
-  --mint-2: #e6f0e8;
-  --card: #ffffff;
-  --line: #d7e4d9;
-  --ink: #183528;
-  --muted: #52685a;
+  --navy-900: #0f1c2e;
+  --navy-800: #15263d;
+  --navy-700: #203954;
+  --accent-blue: #2f5f8f;
+  --gold: #c5a36a;
+  --gold-light: #e2cda7;
+  --mint: #eef2f0;
+  --mint-2: #e2e9e5;
+  --card: #f9f8f5;
+  --line: #e7e5df;
+  --ink: #1b2735;
+  --muted: #687583;
   --white: #ffffff;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', system-ui, -apple-system, sans-serif;

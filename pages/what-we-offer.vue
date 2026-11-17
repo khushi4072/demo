@@ -173,9 +173,18 @@ const values = [
 </template>
 
 <style scoped>
-.offer-page { --cream: #f2f7f3; --deep: #123b2a; --gold: #2d6a4f; background: var(--cream); color: var(--deep); overflow-x: clip; }
+.offer-page { --cream: #f5f2eb; --deep: #101d2e; --gold: #c5a36a; background: var(--cream); color: var(--deep); overflow-x: clip; }
 .offer-page img { max-width: 100%; }
 .section-pad { padding: clamp(60px, 9vw, 140px) 0; }
+
+/* ---------- CONTAINER (left/right gap fix) ---------- */
+.offer-page .container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+  box-sizing: border-box;
+}
 
 /* ---------- HERO ---------- */
 .offer-hero { position: relative; min-height: clamp(580px, 82svh, 810px); display: flex; align-items: flex-end; overflow: hidden; background: var(--deep); color: white; }
@@ -187,18 +196,18 @@ const values = [
 .eyebrow > span { flex: none; width: 30px; height: 1px; background: var(--gold); }
 .eyebrow.dark { color: #78818a; }
 .offer-hero h1 { margin-top: clamp(18px, 3vw, 30px); font: 400 clamp(46px, 9.5vw, 132px)/.93 var(--serif); letter-spacing: -.045em; }
-.offer-hero h1 em { color: #dcebdd; font-weight: 400; }
+.offer-hero h1 em { color: var(--gold); font-weight: 400; }
 .offer-page h2 em { color: var(--gold); font-weight: 400; }
 .hero-copy { max-width: 470px; margin-top: clamp(18px, 2.4vw, 28px); color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.8; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: clamp(24px, 3vw, 34px); }
 .button { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; gap: 24px; padding: 0 23px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; text-align: center; transition: .25s ease; }
 .button-gold { background: var(--gold); color: #fff; }
-.button-gold:hover { background: #3d7c5c; transform: translateY(-2px); }
+.button-gold:hover { background: #e0c58e; transform: translateY(-2px); }
 .text-link { color: white; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,.45); padding: 9px 0; }
-.text-link span { margin-left: 8px; color: #dcebdd; }
+.text-link span { margin-left: 8px; color: var(--gold); }
 .hero-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: clamp(40px, 6vw, 76px); padding-top: 17px; border-top: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.68); font-size: 10px; font-weight: 600; letter-spacing: .16em; }
 .hero-index { position: absolute; right: 4.5%; bottom: 52%; color: white; font: 400 14px var(--sans); letter-spacing: .12em; writing-mode: vertical-rl; }
-.hero-index span { color: #dcebdd; padding: 8px 0; }
+.hero-index span { color: var(--gold); padding: 8px 0; }
 
 /* ---------- INTRO ---------- */
 .intro { background: var(--cream); }
@@ -206,7 +215,7 @@ const values = [
 .intro-grid > * { min-width: 0; }
 .offer-page h2 { font: 400 clamp(32px, 5vw, 68px)/1.1 var(--serif); letter-spacing: -.025em; }
 .intro h2 { margin-top: 23px; }
-.intro h2 em, .section-heading h2 em, .faq-heading h2 em { color: #2d6a4f; }
+.intro h2 em, .section-heading h2 em, .faq-heading h2 em { color: #9e8051; }
 .intro-copy { max-width: 650px; margin-top: 24px; color: #66717a; font-size: 16px; line-height: 1.9; }
 .proof-row { display: flex; flex-wrap: wrap; gap: 24px clamp(28px, 6vw, 78px); margin-top: 44px; padding-top: 23px; border-top: 1px solid #dcd8cf; }
 .proof { display: grid; gap: 2px; }
@@ -225,11 +234,11 @@ const values = [
 .experience-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
 .experience-card:hover .experience-photo img { transform: scale(1.04); }
 .experience-content { position: relative; min-height: 255px; padding: 27px 28px 30px; }
-.number { color: #2d6a4f; font-size: 11px; letter-spacing: .15em; }
+.number { color: #a68a5d; font-size: 11px; letter-spacing: .15em; }
 .experience-content h3 { margin-top: 18px; font: 500 26px/1.2 var(--serif); }
 .experience-content p { margin-top: 12px; color: #68727a; font-size: 14px; line-height: 1.75; }
 .arrow-link { display: inline-flex; align-items: center; gap: 13px; margin-top: 24px; padding: 6px 0; color: var(--deep); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.arrow-link span { color: #2d6a4f; font-size: 16px; transition: transform .2s; }
+.arrow-link span { color: #a68a5d; font-size: 16px; transition: transform .2s; }
 .arrow-link:hover span { transform: translate(3px, -3px); }
 
 /* ---------- AMENITIES ---------- */
@@ -249,14 +258,14 @@ const values = [
 .tile-number, .amenity-tile h3, .tile-mark { position: relative; z-index: 2; }
 .tile-number { position: absolute; top: 16px; left: 18px; color: rgba(255,255,255,.75); font-size: 10px; letter-spacing: .12em; }
 .amenity-tile h3 { max-width: 220px; font: 400 23px/1.2 var(--serif); }
-.tile-mark { position: absolute; right: 18px; bottom: 21px; color: #dcebdd; }
+.tile-mark { position: absolute; right: 18px; bottom: 21px; color: var(--gold); }
 
 /* ---------- VALUES ---------- */
 .values { background: var(--cream); }
 .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #dcd8cf; }
 .value-card { padding: 27px 34px 20px 0; }
 .value-card + .value-card { padding-left: 34px; border-left: 1px solid #dcd8cf; }
-.value-card > span { color: #2d6a4f; font-size: 11px; letter-spacing: .15em; }
+.value-card > span { color: #a68a5d; font-size: 11px; letter-spacing: .15em; }
 .value-card h3 { margin-top: 24px; font: 500 27px var(--serif); }
 .value-card p { margin-top: 12px; max-width: 340px; color: #6b747c; font-size: 14px; line-height: 1.8; }
 
@@ -270,7 +279,7 @@ const values = [
 .faq-item { border-bottom: 1px solid #dedbd4; }
 .faq-item h3 { font: inherit; }
 .faq-item button { width: 100%; min-height: 48px; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 23px 0; border: 0; background: none; text-align: left; color: var(--deep); font: 500 18px var(--serif); cursor: pointer; }
-.faq-icon { flex: none; color: #2d6a4f; font: 300 25px var(--sans); }
+.faq-icon { flex: none; color: #a68a5d; font: 300 25px var(--sans); }
 .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
 .faq-answer p { overflow: hidden; max-width: 600px; color: #6b747c; font-size: 14px; line-height: 1.8; }
 .faq-answer.visible { grid-template-rows: 1fr; }
@@ -343,7 +352,7 @@ const values = [
 
 /* Bahut chhote phones */
 @media (max-width: 380px) {
-  .offer-hero .container, .section-pad .container, .closing-cta .container { width: min(100% - 28px, 1280px); }
+  .offer-page .container { padding-inline: 16px; }
   .offer-hero h1 { font-size: clamp(40px, 14vw, 52px); }
   .proof-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; }
   .amenity-tiles { grid-template-columns: 1fr; }

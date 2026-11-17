@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.gallery-page { --cream: #f2f7f3; --deep: #123b2a; --gold: #2d6a4f; --line: #d7e4d9; background: var(--cream); color: var(--deep); overflow-x: clip; }
+.gallery-page { --cream: #f5f2eb; --deep: #101d2e; --gold: #c5a36a; --line: #dcd8cf; background: var(--cream); color: var(--deep); overflow-x: clip; }
 .g-hero { padding: clamp(40px, 6vw, 80px) 0 clamp(44px, 6vw, 84px); background: var(--deep); color: #fff; }
 .crumbs { display: flex; gap: 8px; color: rgba(255,255,255,.65); font-size: 13px; }
 .crumbs a { color: inherit; }
@@ -162,11 +162,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 .lightbox figure { display: grid; gap: 14px; justify-items: center; margin: 0; max-width: min(1000px, 90vw); animation: pop .3s ease; }
 .lightbox img { display: block; max-width: 100%; max-height: calc(100dvh - 150px); width: auto; height: auto; object-fit: contain; }
 .lightbox figcaption { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; color: rgba(255,255,255,.82); font-size: 15px; text-align: center; }
-.lightbox figcaption small { color: #dcebdd; font-size: 13px; }
+.lightbox figcaption small { color: var(--gold); font-size: 13px; }
 .lb-close, .lb-nav { position: absolute; border: 0; background: none; color: #fff; cursor: pointer; line-height: 1; }
 .lb-close { top: 10px; right: 18px; padding: 6px 12px; font-size: 44px; }
 .lb-nav { top: 50%; transform: translateY(-50%); padding: 10px 16px; font-size: 60px; opacity: .85; }
-.lb-nav:hover, .lb-close:hover { color: #dcebdd; opacity: 1; }
+.lb-nav:hover, .lb-close:hover { color: var(--gold); opacity: 1; }
 .lb-nav.prev { left: 6px; }
 .lb-nav.next { right: 6px; }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }

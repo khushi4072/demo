@@ -133,7 +133,7 @@ onBeforeUnmount(() => {
 .more-links {
   position: absolute; top: calc(100% + 14px); right: 0; z-index: 4; display: grid; min-width: 190px;
   padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: 0 16px 34px -18px rgba(18,59,42,.35); opacity: 0; visibility: hidden;
+  box-shadow: 0 16px 34px -18px rgba(15,28,46,.35); opacity: 0; visibility: hidden;
   transform: translateY(6px); transition: opacity .2s, transform .2s, visibility .2s;
 }
 .nav-more:hover .more-links, .nav-more:focus-within .more-links, .nav-more.expanded .more-links { opacity: 1; visibility: visible; transform: none; }

@@ -74,7 +74,7 @@ export const whoWeAre = {
 
 // OSR-style numbers card. Values marked * come from the VD concept — confirm with client.
 export const stats = [
-  { value: 15, suffix: '+', label: 'Years of Excellence' },
+  { value: 19, suffix: '+', label: 'Years of Excellence' },
   { value: 5000, suffix: '+', label: 'Happy Families Served' },
   { value: 700, suffix: '+', label: 'Farmhouses Developed*' },
   { value: 5, suffix: '', label: 'Featured Developments' },
@@ -200,14 +200,14 @@ export const directors = {
   kicker: 'Leadership',
   title: 'The Minds Behind',
   accent: 'VD Vanchers.',
-  intro: 'Founded in Noida, VD Vanchers is guided by Chairman Vansh Thakur, with 15 years of real estate experience, and Co-Founder Deepanshu Goyal, with 12 years in the field. Together, they bring more than 27 years of industry experience to land development, project planning, and long-term client relationships.',
+  intro: 'Founded in Noida, VD Vanchers is guided by Chairman / Founder Vansh Thakur, with 19 years of real estate experience, and Co-Founder Deepanshu Goyal, with 12 years in the field. Together, they bring more than 31 years of industry experience to land development, project planning, and long-term client relationships.',
   people: [
     {
       name: 'Vansh Thakur',
-      role: 'Chairman',
+      role: 'Chairman / Founder',
       initials: 'VT',
-      quote: '15 years of experience in real estate.',
-      bio: 'With 15 years of experience in real estate, Chairman Vansh Thakur leads the company’s vision and long-term direction. His work focuses on identifying promising locations, shaping considered developments, and keeping customer confidence at the centre of every decision.',
+      quote: '19 years of experience in real estate.',
+      bio: 'With 19 years of experience in real estate, Chairman / Founder Vansh Thakur leads the company’s vision and long-term direction. His work focuses on identifying promising locations, shaping considered developments, and keeping customer confidence at the centre of every decision.',
       photo: '/images/director-vansh-thakur.jpg',
     },
     {

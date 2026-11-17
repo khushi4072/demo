@@ -54,7 +54,6 @@ const toggle = (i: number, has: boolean) => {
             <h3>{{ d.name }}</h3>
             <span class="rule" />
             <blockquote>{{ d.quote }}</blockquote>
-            <span class="sign">{{ d.name }}</span>
           </div>
 
           <!-- desktop: glass overlay (hover) | mobile: card ke andar seedhi dikhti hai -->
@@ -62,7 +61,6 @@ const toggle = (i: number, has: boolean) => {
             <span class="close" aria-hidden="true">×</span>
             <div class="bio-in">
               <span class="b-role">{{ d.role }}</span>
-              <h4>{{ d.name }}</h4>
               <span class="b-rule" />
               <p>{{ d.bio }}</p>
             </div>
@@ -76,18 +74,18 @@ const toggle = (i: number, has: boolean) => {
 <style scoped>
 .directors {
   position: relative; overflow: hidden; isolation: isolate;
-  padding: 130px 0 140px; color: #e8f1ea;
+  padding: 130px 0 140px; color: #d9dee6;
   background:
-    radial-gradient(900px 500px at 85% -10%, rgba(100, 160, 115, .2), transparent 60%),
-    radial-gradient(700px 500px at -10% 110%, rgba(45, 106, 79, .35), transparent 60%),
-    linear-gradient(180deg, #0c2d20 0%, var(--navy-900) 100%);
+    radial-gradient(900px 500px at 85% -10%, rgba(197, 163, 106, .16), transparent 60%),
+    radial-gradient(700px 500px at -10% 110%, rgba(47, 95, 143, .28), transparent 60%),
+    linear-gradient(180deg, #0b1625 0%, var(--navy-900) 100%);
 }
 /* faint architectural grid */
 .directors::before {
   content: ''; position: absolute; inset: 0; z-index: -1; opacity: .5;
   background-image:
-    linear-gradient(rgba(220, 235, 221, .07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(220, 235, 221, .07) 1px, transparent 1px);
+    linear-gradient(rgba(226, 205, 167, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 205, 167, .05) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
@@ -107,7 +105,7 @@ const toggle = (i: number, has: boolean) => {
 .head h2 { margin: 26px 0 22px; font-size: clamp(36px, 5vw, 60px); font-weight: 500; color: var(--white); letter-spacing: -.01em; }
 .head h2 em {
   font-style: italic; display: block;
-  background: linear-gradient(100deg, var(--gold-light) 10%, #91bf9b 50%, #e8f1ea 90%);
+  background: linear-gradient(100deg, var(--gold-light) 10%, var(--gold) 50%, #f3e6cc 90%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .head p { font-size: 17px; line-height: 1.8; color: #9fabba; }
@@ -118,7 +116,7 @@ const toggle = (i: number, has: boolean) => {
   position: relative; display: grid; grid-template-columns: 0.9fr 1fr; align-items: stretch;
   border-radius: 4px; overflow: hidden; outline: none;
   background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
-  border: 1px solid rgba(220, 235, 221, .2);
+  border: 1px solid rgba(226, 205, 167, .16);
   box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .7);
   backdrop-filter: blur(6px);
   -webkit-tap-highlight-color: transparent;
@@ -126,8 +124,8 @@ const toggle = (i: number, has: boolean) => {
 }
 .card.has-bio { cursor: pointer; }
 .card:hover, .card.is-open, .card:focus-visible {
-  border-color: rgba(145, 191, 155, .7);
-  box-shadow: 0 50px 90px -40px rgba(0, 0, 0, .8), 0 0 0 1px rgba(145, 191, 155, .2);
+  border-color: rgba(197, 163, 106, .55);
+  box-shadow: 0 50px 90px -40px rgba(0, 0, 0, .8), 0 0 0 1px rgba(197, 163, 106, .15);
 }
 .card.is-visible:hover { transform: translateY(-6px); }
 
@@ -140,11 +138,11 @@ const toggle = (i: number, has: boolean) => {
   background:
     radial-gradient(circle at 50% 40%, rgba(197, 163, 106, .22), transparent 62%),
     repeating-linear-gradient(135deg, rgba(226,205,167,.035) 0 1px, transparent 1px 14px),
-    linear-gradient(180deg, #1b5138, #0c2d20);
+    linear-gradient(180deg, #13243a, #0a1422);
 }
 .monogram span {
   font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 96px; letter-spacing: .02em;
-  background: linear-gradient(160deg, #e8f1ea 0%, #91bf9b 55%, #2d6a4f 100%);
+  background: linear-gradient(160deg, #f6ead2 0%, var(--gold) 55%, #8d6d3c 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,.45));
   transition: transform .8s ease;
@@ -175,7 +173,24 @@ const toggle = (i: number, has: boolean) => {
 .tap b { font-weight: 500; font-size: 15px; line-height: 1; color: var(--gold-light); }
 
 /* Text */
-.body { position: relative; padding: 44px 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+.body {
+  position: relative;
+  padding: 44px 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: filter .35s ease;
+}
+
+/* Blur the original card content while the details overlay is visible */
+.card.is-open .body,
+.card:focus-visible .body {
+  filter: blur(6px);
+}
+
+@media (hover: hover) {
+  .card:hover .body { filter: blur(6px); }
+}
 .role { font: 600 11px/1.4 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); }
 .body h3 { margin: 14px 0 0; font-size: 30px; font-weight: 500; color: var(--white); line-height: 1.15; }
 .rule { display: block; width: 48px; height: 1px; margin: 24px 0; background: var(--gold); transition: width .5s ease; }
@@ -190,7 +205,7 @@ blockquote::before {
 }
 .sign {
   margin-top: 26px; font-family: var(--serif); font-style: italic; font-size: 15px;
-  color: rgba(220, 235, 221, .72); letter-spacing: .04em;
+  color: rgba(226, 205, 167, .55); letter-spacing: .04em;
 }
 
 /* ===== Glass details overlay (desktop / tablet) ===== */
@@ -209,7 +224,7 @@ blockquote::before {
 .bio-in {
   max-width: 440px; max-height: 100%; overflow: auto; text-align: center;
   transform: translateY(14px); transition: transform .5s cubic-bezier(.2,.7,.2,1);
-  scrollbar-width: thin; scrollbar-color: rgba(145,191,155,.7) transparent;
+  scrollbar-width: thin; scrollbar-color: rgba(197,163,106,.5) transparent;
 }
 .b-role { font: 600 11px/1.4 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--gold-light); }
 .bio h4 { margin: 10px 0 0; font-family: var(--serif); font-size: 26px; font-weight: 500; color: var(--white); line-height: 1.2; }
@@ -238,7 +253,7 @@ blockquote::before {
 @media (max-width: 640px) {
   .directors { padding: 56px 0; }
   .head { margin-bottom: 32px; }
-  .head h2 { margin: 18px 0 14px; color: #dcebdd; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
+  .head h2 { margin: 18px 0 14px; color: var(--white); font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
   .head p { font-size: 14.5px; line-height: 1.7; }
   .kick { gap: 12px; letter-spacing: .3em; }
   .kick i { width: 28px; }

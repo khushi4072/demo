@@ -242,7 +242,7 @@ const submit = () => {
 </template>
 
 <style scoped>
-.detail { --ivory: #f2f7f3; --ink: #123b2a; --stone: #52685a; --hair: #d7e4d9; background: var(--ivory); color: var(--ink); }
+.detail { --ivory: #f7f4ee; --ink: #1d1b18; --stone: #6f6a62; --hair: #e4ded3; background: var(--ivory); color: var(--ink); }
 .section { padding: 110px 0; }
 .detail h2 { font: 400 clamp(32px, 3.8vw, 52px) / 1.08 var(--serif); letter-spacing: -.01em; margin-bottom: 40px; }
 .two-col { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: start; }
@@ -254,7 +254,7 @@ const submit = () => {
 .crumbs a { color: inherit; text-decoration: none; }
 .crumbs a:hover, .crumbs .current { color: var(--ink); }
 .intro-grid { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; margin-bottom: 44px; }
-.chip { display: inline-block; padding: 7px 16px; border: 1px solid #2d6a4f; color: #1b5138; font: 600 12px var(--sans); letter-spacing: .06em; }
+.chip { display: inline-block; padding: 7px 16px; border: 1px solid #b08d4a; color: #8a6b2c; font: 600 12px var(--sans); letter-spacing: .06em; }
 .chip.done { border-color: var(--ink); color: var(--ink); }
 .intro h1 { margin-top: 22px; font: 400 clamp(46px, 6.6vw, 96px) / .98 var(--serif); letter-spacing: -.02em; }
 .tagline { margin-top: 14px; font: italic 400 clamp(18px, 2vw, 26px) var(--serif); color: var(--stone); }
@@ -311,10 +311,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .enquiry label { display: grid; gap: 6px; font-size: 13px; color: var(--stone); }
 .enquiry input, .enquiry textarea { width: 100%; padding: 12px 0; border: 0; border-bottom: 1px solid #cfc8bb; background: transparent; color: var(--ink); font: 16px var(--sans); border-radius: 0; }
 .enquiry input:focus, .enquiry textarea:focus { border-bottom-color: var(--gold); outline: none; }
-.enquiry .ok { margin-top: 14px; font-size: 14px; color: #1b5138; }
+.enquiry .ok { margin-top: 14px; font-size: 14px; color: #8a6b2c; }
 .direct { display: grid; gap: 6px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--hair); }
 .direct a { color: var(--ink); text-decoration: none; font-weight: 600; }
-.direct a:hover { color: #1b5138; }
+.direct a:hover { color: #8a6b2c; }
 
 /* VIDEO */
 .video-sec { background: var(--ink); color: #fff; }
@@ -329,7 +329,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .connect-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 80px; }
 .stop { display: flex; align-items: baseline; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--hair); }
 .stop strong { flex: none; min-width: 120px; font: 400 52px / 1 var(--serif); color: var(--ink); }
-.stop strong small { display: inline; font: 600 14px var(--sans); color: #1b5138; margin-left: 6px; }
+.stop strong small { display: inline; font: 600 14px var(--sans); color: #8a6b2c; margin-left: 6px; }
 .stop span { font-size: 17px; color: var(--stone); }
 
 /* AMENITIES */

@@ -3,7 +3,7 @@
         "slug": "vd-residency",
         "name": "VD Residency",
         "tagline": "Near Noida International Airport",
-        "status": "Ongoing",
+        "status": "Delivered",
         "type": "Residential Plots",
         "city": "Noida",
         "location": "Near Noida International Airport (Jewar), Noida",
@@ -27,7 +27,7 @@
             },
             {
                 "label": "Status",
-                "value": "Ongoing"
+                "value": "Delivered"
             },
             {
                 "label": "Developer",

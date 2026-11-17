@@ -102,7 +102,7 @@ input:not([type="hidden"]):not(.hp), select { height: 48px; }
 .date-row input[type="date"]::-webkit-datetime-edit { padding: 0; }
 .date-row input[type="date"]::-webkit-calendar-picker-indicator { flex: none; width: 16px; height: 16px; margin: 0 0 0 6px; cursor: pointer; }
 
-input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(45,106,79,.2); background: var(--white); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(197,163,106,.2); background: var(--white); }
 textarea { resize: vertical; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .submit { width: 100%; margin-top: 6px; }
@@ -113,7 +113,7 @@ textarea { resize: vertical; }
 @media (max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 40px; } }
 @media (max-width: 520px) {
   .grid { gap: 30px; }
-  .info .h2 { color: #dcebdd; margin: 10px 0 14px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
+  .info .h2 { color: var(--white); margin: 10px 0 14px; font-size: clamp(36px, 9.5vw, 42px); line-height: 1.1; }
   .info > p,
   .info ul { display: none; }
   .info li { gap: 12px; font-size: 14px; }

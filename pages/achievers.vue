@@ -153,7 +153,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.achievers { --ivory: #f2f7f3; --ink: #123b2a; --stone: #52685a; --hair: #d7e4d9; background: var(--ivory); color: var(--ink); }
+.achievers { --ivory: #f5f2ec; --ink: #1d1b18; --stone: #6f6a62; --hair: #ddd6c8; background: var(--ivory); color: var(--ink); }
 
 /* ---------- BIG BANNER ---------- */
 .hero { position: relative; display: flex; min-height: min(74vh, 620px); overflow: hidden; background: var(--ink); color: #fff; }
@@ -163,8 +163,8 @@ onBeforeUnmount(() => {
 .hero-shade {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 20% 60%, rgba(18,59,42,.94) 0%, rgba(18,59,42,.62) 55%, rgba(18,59,42,.4) 100%),
-    linear-gradient(to bottom, rgba(18,59,42,.72) 0%, rgba(18,59,42,0) 30%, rgba(18,59,42,.96) 100%);
+    radial-gradient(ellipse at 20% 60%, rgba(29,27,24,.92) 0%, rgba(29,27,24,.55) 55%, rgba(29,27,24,.35) 100%),
+    linear-gradient(to bottom, rgba(29,27,24,.7) 0%, rgba(29,27,24,0) 30%, rgba(29,27,24,.95) 100%);
 }
 .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; width: 100%; padding-top: 120px; padding-bottom: 32px; padding-left: clamp(24px, 6vw, 96px); padding-right: clamp(24px, 6vw, 96px); }
 .crumbs { display: flex; gap: 8px; font-size: 13px; color: rgba(255,255,255,.65); }
