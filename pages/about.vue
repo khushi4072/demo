@@ -293,28 +293,28 @@ const gallery = [
 /* ---------- Department heads (images live in /public) ---------- */
 const deptHeads = [
   {
-    img: '/img1.jpg',
+    img: '/img1.jpeg',
     name: 'Mr. Pankaj Yadav',
     dept: 'Sales Department',
     role: 'Sales Director',
     text: 'With over 10 years of experience in real estate sales, Mr. Pankaj Yadav leads our sales vision, focusing on client acquisition, project positioning and building long-term buyer confidence.',
   },
   {
-    img: '/img2.jpg',
+    img: '/img2.jpeg',
     name: 'Ms. Amarjeet Kaur Virdi',
     dept: 'Human Resources Department',
     role: 'Head of HR',
     text: 'Leading our HR operations, Ms. Amarjeet Kaur Virdi focuses on talent acquisition, employee engagement, workforce management and building a positive organisational culture.',
   },
   {
-    img: '/img4.jpg',
+    img: '/img4.jpeg',
     name: 'Mr. Amit Lasiyal',
     dept: 'Accounts & Finance Department',
     role: 'Head of Accounts & Finance',
     text: 'Overseeing our financial operations, Mr. Amit Lasiyal focuses on financial management, accounting accuracy, expense coordination and maintaining transparency in financial processes.',
   },
   {
-    img: '/img3.jpg',
+    img: '/img3.jpeg',
     name: 'Ms. Lakshita Bisht',
     dept: 'Relationship Management Department',
     role: 'Head of Relationship Management',
