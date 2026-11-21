@@ -166,7 +166,7 @@ const moveCursor = (e: MouseEvent) => {
     cy = ty
     cursorRef.value?.classList.add('on')
   }
-  const hit = (e.target as HTMLElement | null)?.closest?.('a, button, .pro-card, .dest-panel')
+  const hit = (e.target as HTMLElement | null)?.closest?.('a, button, .pro-card, .dest-panel, .dept-card')
   cursorRef.value?.classList.toggle('hover', !!hit)
   if (!cursorRaf) cursorRaf = requestAnimationFrame(tickCursor)
 }
@@ -288,6 +288,38 @@ const gallery = [
   { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80', alt: 'Farmhouse exterior', k: '-50px', ratio: '4 / 5', offset: '0px' },
   { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80', alt: 'Modern farmhouse living', k: '40px', ratio: '3 / 4', offset: '70px' },
   { src: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80', alt: 'Farmhouse interior', k: '-25px', ratio: '4 / 5', offset: '20px' },
+]
+
+/* ---------- Department heads (images live in /public) ---------- */
+const deptHeads = [
+  {
+    img: '/img1.jpg',
+    name: 'Mr. Pankaj Yadav',
+    dept: 'Sales Department',
+    role: 'Sales Director',
+    text: 'With over 10 years of experience in real estate sales, Mr. Pankaj Yadav leads our sales vision, focusing on client acquisition, project positioning and building long-term buyer confidence.',
+  },
+  {
+    img: '/img2.jpg',
+    name: 'Ms. Amarjeet Kaur Virdi',
+    dept: 'Human Resources Department',
+    role: 'Head of HR',
+    text: 'Leading our HR operations, Ms. Amarjeet Kaur Virdi focuses on talent acquisition, employee engagement, workforce management and building a positive organisational culture.',
+  },
+  {
+    img: '/img4.jpg',
+    name: 'Mr. Amit Lasiyal',
+    dept: 'Accounts & Finance Department',
+    role: 'Head of Accounts & Finance',
+    text: 'Overseeing our financial operations, Mr. Amit Lasiyal focuses on financial management, accounting accuracy, expense coordination and maintaining transparency in financial processes.',
+  },
+  {
+    img: '/img3.jpg',
+    name: 'Ms. Lakshita Bisht',
+    dept: 'Relationship Management Department',
+    role: 'Head of Relationship Management',
+    text: 'Leading our relationship management function, Ms. Lakshita Bisht focuses on client relationships, customer coordination, query resolution and delivering a professional customer experience.',
+  },
 ]
 
 /* ---------- Presence: destinations (panels) + India map ---------- */
@@ -704,6 +736,55 @@ const focusLoc = (key: string) => {
 
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DEPARTMENT HEADS ========== -->
+    <section class="section dept-section">
+      <div class="container">
+        <div class="section-title-center" v-reveal>
+          <span class="classy-kicker">OUR TEAM</span>
+          <h2 class="classy-h2" v-text-reveal>
+            <span class="reveal-text">Meet Our Department Heads</span>
+          </h2>
+          <div class="title-rule" v-in-view></div>
+          <p class="section-sub">
+            The People Behind Our Progress. At VD VANCHERS, our strength lies in our people. Our experienced department heads lead their respective teams with professionalism, dedication and a commitment to organisational excellence.
+          </p>
+        </div>
+
+        <div class="dept-grid">
+          <article
+            v-for="(h, idx) in deptHeads"
+            :key="h.name"
+            class="dept-card"
+            v-reveal="{ delay: idx * 120 }"
+            v-in-view
+            tabindex="0"
+          >
+            <div class="dept-photo">
+              <img :src="h.img" :alt="h.name" loading="lazy" />
+              <span class="corner tl"></span>
+              <span class="corner br"></span>
+            </div>
+            <div class="dept-info">
+              <span class="dept-no">0{{ idx + 1 }}</span>
+              <span class="dept-dept">{{ h.dept }}</span>
+              <h3 class="dept-person">{{ h.name }}</h3>
+              <span class="dept-role">{{ h.role }}</span>
+              <p class="dept-text">{{ h.text }}</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="dept-closing" v-reveal="{ delay: 200 }">
+          <span class="sign-line"></span>
+          <div>
+            <h3>One Vision. Three Pillars. One Growing Organisation.</h3>
+            <p>Together, our department heads ensure smooth operations, strong professional relationships and continuous organisational growth at VD VANCHERS.</p>
+          </div>
+          <span class="sign-line"></span>
         </div>
       </div>
     </section>
@@ -1936,6 +2017,120 @@ const focusLoc = (key: string) => {
   animation-play-state: paused;
   transform: scale(1.1);
   filter: blur(5px);
+}
+
+/* ============================================================
+   DEPARTMENT HEADS
+   ============================================================ */
+.dept-section { padding: 120px 0; background: #ffffff; }
+
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.dept-card { display: flex; flex-direction: column; outline: none; }
+
+.dept-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e8e4dc;
+  box-shadow: 0 20px 50px rgba(26,26,26,0.12);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.4s var(--ease), box-shadow 0.5s;
+}
+
+.dept-card.in-view .dept-photo { clip-path: inset(0 0 0 0); }
+.dept-card:hover .dept-photo { box-shadow: 0 34px 70px rgba(26,26,26,0.22); }
+
+.dept-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: grayscale(0.25);
+  transform: scale(1.04);
+  transition: transform 1.2s var(--ease), filter 0.6s;
+}
+
+.dept-card:hover .dept-photo img { transform: scale(1.1); filter: none; }
+
+.dept-card:hover .corner,
+.dept-card:focus-within .corner { width: 44px; height: 44px; opacity: 1; }
+
+.dept-info { padding: 24px 4px 0; }
+
+.dept-no {
+  display: block;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.dept-dept {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 10px;
+}
+
+.dept-person {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.dept-role { display: block; font-size: 13px; color: #888; margin-bottom: 14px; font-style: italic; }
+.dept-text { font-size: 14px; line-height: 1.7; color: #666; margin: 0; }
+
+.dept-closing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid #ece7de;
+  text-align: center;
+}
+
+.dept-closing h3 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-style: italic;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.dept-closing p { margin: 0 auto; max-width: 560px; font-size: 15px; line-height: 1.7; color: #666; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dept-photo { clip-path: none; transition: none; }
+  .dept-photo img { transition: none; }
+}
+
+@media (max-width: 1024px) {
+  .dept-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .dept-section { padding: 80px 0; }
+  .dept-grid { grid-template-columns: 1fr; gap: 40px; }
+  .dept-closing .sign-line { display: none; }
 }
 
 /* ============================================================
